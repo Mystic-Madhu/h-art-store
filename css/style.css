@@ -1,0 +1,78 @@
+/* Phase 2: Enhanced Styling - Improved Visual Appeal */
+
+/* Import Google Fonts for better typography */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* CSS Variables - Easy to change colors and values across entire site */
+:root {
+    /* Enhanced color palette - More sophisticated and appealing */
+    --primary-color: #8B7355;      /* Warm brown - main brand color */
+    --primary-dark: #6B5742;       /* Darker brown for depth */
+    --secondary-color: #7A8471;    /* Sage green - calming accent */
+    --accent-color: #D4AF37;       /* Rich gold - premium feel */
+    --accent-light: #F4E4B8;       /* Light gold for backgrounds */
+    --background-color: #FFFFFF;   /* Pure white */
+    --light-background: #FAFAFA;   /* Very light gray */
+    --cream-background: #FFF8F0;   /* Warm cream for sections */
+    --text-color: #2C2C2C;         /* Rich dark gray */
+    --text-light: #666666;         /* Medium gray */
+    --text-muted: #999999;         /* Light gray */
+    --border-color: #E5E5E5;       /* Subtle borders */
+    
+    /* Enhanced design system */
+    --border-radius: 12px;         /* More rounded corners */
+    --border-radius-small: 6px;    /* Small elements */
+    --border-radius-large: 20px;   /* Large elements */
+    --transition-fast: all 0.2s ease;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --max-width: 1200px;
+    
+    /* Enhanced shadows for depth */
+    --shadow-subtle: 0 2px 8px rgba(0,0,0,0.06);
+    --shadow-light: 0 4px 16px rgba(0,0,0,0.08);
+    --shadow-medium: 0 8px 24px rgba(0,0,0,0.12);
+    --shadow-strong: 0 16px 32px rgba(0,0,0,0.16);
+    
+    /* Spacing system */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-xxl: 4rem;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced body styling */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enhanced Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    line-height: 1.
