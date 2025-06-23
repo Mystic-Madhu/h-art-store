@@ -1,56 +1,293 @@
-/* Phase 1: Basic Styling */
+/* Phase 2: Enhanced Styling */
+
+/* CSS Variables - Easy to change colors and values across entire site */
+:root {
+    /* Main brand colors - Change these to customize your site's look */
+    --primary-color: #8B7355;      /* Main brand color - used for headers and buttons */
+    --secondary-color: #7A8471;    /* Secondary accent color - used for text and borders */
+    --accent-color: #A0956B;       /* Highlight color - used for special elements */
+    --background-color: #FFFFFF;   /* Main background color */
+    --light-background: #F9F9F9;   /* Light sections background */
+    --text-color: #333333;         /* Main text color */
+    --text-light: #666666;         /* Secondary text color - lighter than main */
+    
+    /* Design system values - Consistent spacing and effects */
+    --border-radius: 8px;          /* Rounded corners on cards and buttons */
+    --transition: all 0.3s ease;   /* Smooth animations speed */
+    --max-width: 1200px;           /* Maximum width for content containers */
+    --shadow-light: 0 4px 15px rgba(0,0,0,0.1);    /* Subtle shadow for cards */
+    --shadow-hover: 0 8px 25px rgba(0,0,0,0.15);   /* Stronger shadow on hover */
+}
+
+/* Reset default browser styles for consistent look across browsers */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Main body styling - Sets default font and colors */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;              /* Readable line spacing */
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
-header {
-    background: #8B7355;
-    color: white;
+/* Typography - Heading styles for consistent hierarchy */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;  /* Elegant serif font for headings */
+    margin-bottom: 1rem;
+    font-weight: 400;
+    line-height: 1.3;              /* Tighter line spacing for headings */
+}
+
+/* Individual heading sizes - Modify these to change heading appearance */
+h1 { 
+    font-size: 2.5rem;             /* Largest heading - site title */
+    color: var(--background-color); /* White color for header */
+}
+
+h2 { 
+    font-size: 2rem;               /* Section headings */
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+h3 { 
+    font-size: 1.5rem;             /* Sub-section headings */
+    color: var(--secondary-color);
+}
+
+/* Paragraph styling - Main body text */
+p {
+    margin-bottom: 1rem;
+    color: var(--text-light);      /* Slightly lighter than headings for hierarchy */
+}
+
+/* Header section - Top navigation bar */
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); /* Gradient background */
+    color: var(--background-color);
     padding: 1rem 0;
+    box-shadow: var(--shadow-light); /* Subtle shadow below header */
+    position: sticky;               /* Stays at top when scrolling */
+    top: 0;
+    z-index: 100;                  /* Appears above other content */
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
+/* Navigation container - Centers and limits width */
+.nav {
+    display: flex;                 /* Horizontal layout */
+    justify-content: space-between; /* Logo left, menu right */
+    align-items: center;           /* Vertically center items */
+    max-width: var(--max-width);
+    margin: 0 auto;               /* Center the navigation */
+    padding: 0 20px;              /* Side padding */
+}
+
+/* Site title styling */
+.nav h1 {
+    font-size: 1.8rem;
+    margin: 0;                     /* Remove default margin */
+}
+
+/* Navigation menu list */
+.nav ul {
+    display: flex;                 /* Horizontal menu items */
+    list-style: none;              /* Remove bullet points */
+    gap: 2rem;                     /* Space between menu items */
+}
+
+/* Navigation links styling */
+.nav a {
+    color: var(--background-color); /* White text */
+    text-decoration: none;          /* Remove underlines */
+    transition: var(--transition);  /* Smooth hover effects */
+    padding: 0.5rem 1rem;          /* Clickable area padding */
+    border-radius: var(--border-radius); /* Rounded hover background */
+}
+
+/* Navigation links hover effect */
+.nav a:hover {
+    background: rgba(255,255,255,0.2); /* Semi-transparent white background */
+    transform: translateY(-2px);       /* Slight upward movement */
+}
+
+/* Main content container - Centers content and limits width */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;               /* Center content */
+    padding: 20px;                /* Side padding */
+}
+
+/* Section spacing - Consistent gaps between page sections */
+section {
+    margin: 3rem 0;               /* Vertical spacing between sections */
+    padding: 2rem 0;              /* Internal section padding */
+}
+
+/* Hero section - Main banner area */
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--light-background), #e8f0e8); /* Subtle gradient */
+    border-radius: var(--border-radius);
+    margin-bottom: 3rem;
+}
+
+/* Call-to-action button styling */
+.cta-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--background-color);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    margin-top: 1rem;
+    font-weight: 600;              /* Slightly bold text */
+}
+
+/* CTA button hover effect */
+.cta-button:hover {
+    background: var(--secondary-color); /* Color change on hover */
+    transform: translateY(-2px);        /* Slight lift effect */
+    box-shadow: var(--shadow-hover);    /* Stronger shadow */
+}
+
+/* Product grid - Responsive layout for artwork display */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+    gap: 2rem;                     /* Space between grid items */
+    margin-top: 2rem;
+}
+
+/* Individual product card styling */
+.product-card {
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;              /* Clips content to rounded corners */
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    cursor: pointer;               /* Indicates clickable */
+}
+
+/* Product card hover effect */
+.product-card:hover {
+    transform: translateY(-5px);   /* Lift effect */
+    box-shadow: var(--shadow-hover); /* Stronger shadow */
+}
+
+/* Product image container */
+.product-image {
+    position: relative;
+    overflow: hidden;              /* Clips image to container */
+}
+
+/* Product image styling */
+.product-image img {
+    width: 100%;
+    height: 300px;                 /* Fixed height for consistency */
+    object-fit: cover;             /* Crop to fit without distortion */
+    transition: var(--transition);
+}
+
+/* Product image hover effect */
+.product-image:hover img {
+    transform: scale(1.05);        /* Slight zoom on hover */
+}
+
+/* Product information section */
+.product-info {
+    padding: 1.5rem;              /* Internal spacing */
+}
+
+/* Product title styling */
+.product-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+/* Product type label (Original, Print, etc.) */
+.product-type {
+    color: var(--secondary-color);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Product price styling */
+.price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+/* Card component - Reusable styled container */
+.card {
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    margin: 2rem 0;
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Footer styling */
+footer {
+    background: var(--secondary-color);
+    color: var(--background-color);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+/* Container class - Reusable content wrapper */
+.container {
+    max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 20px;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-}
-
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-section {
-    margin: 2rem 0;
-    padding: 2rem 0;
-}
-
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
+/* Responsive Design - Mobile optimizations */
+@media (max-width: 768px) {
+    /* Smaller navigation on mobile */
+    .nav {
+        flex-direction: column;     /* Stack logo above menu */
+        gap: 1rem;
+    }
+    
+    .nav ul {
+        gap: 1rem;                 /* Closer menu items on mobile */
+    }
+    
+    /* Smaller text on mobile */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    
+    /* Reduced padding on mobile */
+    main {
+        padding: 10px;
+    }
+    
+    /* Smaller hero section on mobile */
+    .hero {
+        padding: 2rem 0;
+    }
+    
+    /* Single column grid on mobile */
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
