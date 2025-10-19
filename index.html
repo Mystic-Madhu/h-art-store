@@ -404,22 +404,22 @@
             <div class="carousel-container">
                 <!-- Slide 1: Your Studio Setup -->
                 <div class="carousel-slide active">
-                    <img src="https://ibb.co/dCzkMqs" alt="Your art studio setup">
+                    <img src="https://github.com/Mystic-Madhu/h-art-store/raw/main/images/studio-setup.jpg" alt="Your art studio setup">
                 </div>
 
                 <!-- Slide 2: Your Paintings Collection -->
                 <div class="carousel-slide">
-                    <img src="https://ibb.co/tTpWsgJj" alt="Your landscape paintings collection">
+                    <img src="https://github.com/Mystic-Madhu/h-art-store/raw/main/images/paintings-collection.jpg" alt="Your landscape paintings collection">
                 </div>
 
                 <!-- Slide 3: Your Studio Setup (Again) -->
                 <div class="carousel-slide">
-                    <img src="https://ibb.co/dCzkMqs" alt="Your art studio setup">
+                    <img src="https://github.com/Mystic-Madhu/h-art-store/raw/main/images/studio-setup.jpg" alt="Your art studio setup">
                 </div>
 
                 <!-- Slide 4: Your Paintings Collection (Again) -->
                 <div class="carousel-slide">
-                    <img src="https://ibb.co/tTpWsgJj" alt="Your landscape paintings collection">
+                    <img src="https://github.com/Mystic-Madhu/h-art-store/raw/main/images/paintings-collection.jpg" alt="Your landscape paintings collection">
                 </div>
 
                 <div class="carousel-overlay"></div>
@@ -515,11 +515,9 @@
         const totalSlides = slides.length;
 
         function showSlide(index) {
-            // Remove active class from all slides and indicators
             slides.forEach(slide => slide.classList.remove('active'));
             indicators.forEach(ind => ind.classList.remove('active'));
 
-            // Add active class to current slide and indicator
             slides[index].classList.add('active');
             indicators[index].classList.add('active');
         }
@@ -534,7 +532,6 @@
             showSlide(currentIndex);
         }
 
-        // Auto-advance carousel every 5 seconds
         setInterval(nextSlide, 5000);
     </script>
 </body>
