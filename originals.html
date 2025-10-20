@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Original hand-painted artworks - Nature-inspired paintings for your home">
+    <title>Originals - H Art Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+        h1 { font-size: 2rem; color: white; margin: 0; }
+        h2 { font-size: 2.5rem; color: #d4c3b2; margin-bottom: 1rem; text-align: center; }
+        h3 { font-size: 1.4rem; color: #d4c3b2; margin-bottom: 0.5rem; }
+        p { margin-bottom: 1rem; color: #666; }
+        .header {
+            background: linear-gradient(135deg, #d4c3b2, #c9b5a0);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        .nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+        .page-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            height: 350px;
+        }
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        .product-image:hover img {
+            transform: scale(1.1);
+        }
+        .product-info {
+            padding: 1.5rem;
+        }
+        .product-info h3 {
+            color: #d4c3b2;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .product-description {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .product-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        .product-size {
+            color: #a89584;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        .price {
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: #c9b5a0;
+        }
+        footer {
+            background: #a89584;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+        @media (max-width: 768px) {
+            .nav { 
+                flex-direction: column; 
+                gap: 1rem; 
+                padding: 1rem 20px; 
+            }
+            .nav ul { 
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 2rem; }
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <h1>H Art Store</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="originals.html">Originals</a></li>
+                <li><a href="prints.html">Prints</a></li>
+                <li><a href="calendars.html">Calendars</a></li>
+                <li><a href="wall-paintings.html">Wall Paintings</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h2>Original Paintings</h2>
+                <p>Each original painting is a one-of-a-kind masterpiece, hand-painted with care and attention to detail. These unique artworks bring the beauty of nature into your home.</p>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/400/450?random=10" alt="Mountain Sunset">
+                    </div>
+                    <div class="product-info">
+                        <h3>Mountain Sunset</h3>
+                        <p class="product-description">A breathtaking view of mountains bathed in golden sunset light, capturing nature's peaceful beauty.</p>
+                        <div class="product-details">
+                            <span class="product-size">16" × 20" Canvas</span>
+                            <p class="price">€180,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/400/450?random=11" alt="Garden Paradise">
+                    </div>
+                    <div class="product-info">
+                        <h3>Garden Paradise</h3>
+                        <p class="product-description">Vibrant flowers in full bloom create a colorful garden scene filled with life and joy.</p>
+                        <div class="product-details">
+                            <span class="product-size">12" × 16" Canvas</span>
+                            <p class="price">€150,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/400/450?random=12" alt="Peaceful Lake">
+                    </div>
+                    <div class="product-info">
+                        <h3>Peaceful Lake</h3>
+                        <p class="product-description">Serene lake reflection with surrounding trees, perfect for bringing tranquility to any space.</p>
+                        <div class="product-details">
+                            <span class="product-size">18" × 24" Canvas</span>
+                            <p class="price">€220,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/400/450?random=13" alt="Forest Path">
+                    </div>
+                    <div class="product-info">
+                        <h3>Forest Path</h3>
+                        <p class="product-description">A winding path through lush green forest invites you to explore nature's wonder.</p>
+                        <div class="product-details">
+                            <span class="product-size">16" × 20" Canvas</span>
+                            <p class="price">€175,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/400/450?random=14" alt="Cherry Blossoms">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cherry Blossoms</h3>
+                        <p class="product-description">Delicate pink cherry blossoms in spring bloom, capturing the fleeting beauty of the season.</p>
+                        <div class="product-details">
+                            <span class="product-size">12" × 16" Canvas</span>
+                            <p class="price">€160,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/400/450?random=15" alt="Ocean Waves">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ocean Waves</h3>
+                        <p class="product-description">Dynamic waves crashing on the shore, bringing the energy of the sea into your home.</p>
+                        <div class="product-details">
+                            <span class="product-size">20" × 24" Canvas</span>
+                            <p class="price">€240,00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 H Art Store. All rights reserved.</p>
+    </footer>
+</body>
+</html>
