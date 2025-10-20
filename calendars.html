@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Beautiful art calendars for 2026 featuring nature-inspired paintings">
+    <title>Calendars 2026 - H Art Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+        h1 { font-size: 2rem; color: white; margin: 0; }
+        h2 { font-size: 2.5rem; color: #d4c3b2; margin-bottom: 1rem; text-align: center; }
+        h3 { font-size: 1.4rem; color: #d4c3b2; margin-bottom: 0.5rem; }
+        p { margin-bottom: 1rem; color: #666; }
+        .header {
+            background: linear-gradient(135deg, #d4c3b2, #c9b5a0);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        .nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+        .page-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            height: 400px;
+        }
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        .product-image:hover img {
+            transform: scale(1.05);
+        }
+        .product-info {
+            padding: 1.5rem;
+        }
+        .product-info h3 {
+            color: #d4c3b2;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .product-description {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .product-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        .product-size {
+            color: #a89584;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        .price {
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: #c9b5a0;
+        }
+        footer {
+            background: #a89584;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+        @media (max-width: 768px) {
+            .nav { 
+                flex-direction: column; 
+                gap: 1rem; 
+                padding: 1rem 20px; 
+            }
+            .nav ul { 
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 2rem; }
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <h1>H Art Store</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="originals.html">Originals</a></li>
+                <li><a href="prints.html">Prints</a></li>
+                <li><a href="calendars.html">Calendars</a></li>
+                <li><a href="wall-paintings.html">Wall Paintings</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h2>2026 Art Calendars</h2>
+                <p>Start your year with beauty! Each month features a stunning nature-inspired painting to brighten your space throughout 2026.</p>
+            </div>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/400/500?random=30" alt="Nature's Seasons 2026 Calendar">
+                    </div>
+                    <div class="product-info">
+                        <h3>Nature's Seasons 2026</h3>
+                        <p class="product-description">12 months of breathtaking landscapes celebrating each season's unique beauty.</p>
+                        <div class="product-details">
+                            <span class="product-size">12" × 12" Wall Calendar</span>
+                            <p class="price">€18,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/400/500?random=31" alt="Garden Dreams 2026 Calendar">
+                    </div>
+                    <div class="product-info">
+                        <h3>Garden Dreams 2026</h3>
+                        <p class="product-description">Colorful garden scenes and floral paintings for nature lovers.</p>
+                        <div class="product-details">
+                            <span class="product-size">12" × 12" Wall Calendar</span>
+                            <p class="price">€18,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/400/500?random=32" alt="Peaceful Places 2026 Calendar">
+                    </div>
+                    <div class="product-info">
+                        <h3>Peaceful Places 2026</h3>
+                        <p class="product-description">Serene landscapes to bring tranquility to your daily life.</p>
+                        <div class="product-details">
+                            <span class="product-size">10" × 14" Wall Calendar</span>
+                            <p class="price">€16,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/400/500?random=33" alt="Coastal Beauty 2026 Calendar">
+                    </div>
+                    <div class="product-info">
+                        <h3>Coastal Beauty 2026</h3>
+                        <p class="product-description">Ocean views and beach scenes to inspire wanderlust all year long.</p>
+                        <div class="product-details">
+                            <span class="product-size">12" × 12" Wall Calendar</span>
+                            <p class="price">€18,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/400/500?random=34" alt="Forest Trails 2026 Desk Calendar">
+                    </div>
+                    <div class="product-info">
+                        <h3>Forest Trails 2026</h3>
+                        <p class="product-description">Woodland paths and forest scenes for your desk. Compact size perfect for any workspace.</p>
+                        <div class="product-details">
+                            <span class="product-size">6" × 8" Desk Calendar</span>
+                            <p class="price">€12,00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://picsum.photos/400/500?random=35" alt="Mountain Majesty 2026 Calendar">
+                    </div>
+                    <div class="product-info">
+                        <h3>Mountain Majesty 2026</h3>
+                        <p class="product-description">Stunning mountain vistas and alpine landscapes throughout the year.</p>
+                        <div class="product-details">
+                            <span class="product-size">12" × 12" Wall Calendar</span>
+                            <p class="price">€18,00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 H Art Store. All rights reserved.</p>
+    </footer>
+</body>
+</html>
