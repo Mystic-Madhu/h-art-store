@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Painting details - H Art Store</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* page-specific styles (move to style.css if you prefer) */
+    .container { max-width: 980px; margin: 48px auto; padding: 0 20px; }
+    .back-link { display:inline-block; margin-bottom:16px; color:#7d6c61; text-decoration:none; }
+    .detail-wrap { display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap; }
+    .detail-img { flex: 0 0 420px; max-width:420px; }
+    .detail-img img { width:100%; height:auto; border-radius:8px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+    .detail-meta { flex:1; min-width:260px; }
+    .detail-meta h1 { margin-top:0; font-size:28px; color:#333; }
+    .detail-meta .price { color:#c48b2c; font-weight:700; margin:8px 0; font-size:20px; }
+    .detail-meta .specs { color:#777; margin:10px 0; font-size:14px; }
+    .detail-meta p.description { color:#444; line-height:1.6; }
+    .button { display:inline-block; padding:10px 14px; border-radius:6px; background:#7d6c61; color:#fff; text-decoration:none; margin-right:8px; }
+    .not-found { text-align:center; padding:60px 0; color:#666; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a class="back-link" href="originals.html">&larr; Back to Originals</a>
+
+    <div id="content">
+      <!-- JS will inject the painting detail here -->
+    </div>
+  </div>
+
+  <script>
+    // ---- PAINTINGS MAP: update these entries with your actual image URLs and data ----
+    const PAINTINGS = {
+      "chaitra": {
+        "title": "Chaitra",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Chaitra_wavylr.jpg",
+        "price": "₹10,000",
+        "dimensions": "10\" × 12\" Canvas",
+        "description": "Spring blossoms and new beginnings mark the first month of the Hindu calendar. One-of-a-kind, hand-painted original."
+      },
+      "vaishakh": {
+        "title": "Vaishakh",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763295097/Vaishakh_z0qaim.jpg",
+        "price": "₹10,000",
+        "dimensions": "10\" × 12\" Canvas",
+        "description": "Vibrant flowers and warm sunshine celebrate the beauty of summer's arrival."
+      }
+      // <-- Add more entries here, e.g. "jyeshtha": { title, image, price, dimensions, description }
+    };
+    // ----------------------------------------------------------------------------------
+
+    function getIdFromQuery() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('id');
+    }
+
+    function escapeHtml(str) {
+      if (!str && str !== 0) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function renderNotFound() {
+      document.getElementById('content').innerHTML = `
+        <div class="not-found">
+          <h2>Painting not found</h2>
+          <p>We couldn't find that painting. <a href="originals.html">Return to Originals</a></p>
+        </div>
+      `;
+      document.title = 'Painting not found';
+    }
+
+    function renderPainting(slug) {
+      const data = PAINTINGS[slug];
+      if (!data) { renderNotFound(); return; }
+
+      document.title = data.title + ' — H Art Store';
+      const html = `
+        <div class="detail-wrap">
+          <div class="detail-img">
+            <img src="${data.image}" alt="${escapeHtml(data.title)}" />
+          </div>
+          <div class="detail-meta">
+            <h1>${escapeHtml(data.title)}</h1>
+            <div class="price">${escapeHtml(data.price)}</div>
+            <div class="specs">${escapeHtml(data.dimensions)}</div>
+            <p class="description">${escapeHtml(data.description)}</p>
+
+            <div style="margin-top:20px;">
+              <a class="button" href="mailto:your-email@example.com?subject=Enquiry about ${encodeURIComponent(data.title)}">Enquire</a>
+              <a class="button" href="mailto:your-email@example.com?subject=Buy ${encodeURIComponent(data.title)}">Buy</a>
+            </div>
+          </div>
+        </div>
+      `;
+      document.getElementById('content').innerHTML = html;
+    }
+
+    // Initialize
+    const id = (getIdFromQuery() || '').toLowerCase();
+    if (id) {
+      renderPainting(id);
+    } else {
+      renderNotFound();
+    }
+  </script>
+</body>
+</html>
