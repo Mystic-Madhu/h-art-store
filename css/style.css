@@ -291,4 +291,19 @@ footer {
   height: 100%;
   box-sizing: border-box;
 }
+/* Remove blue color + underline from clickable product cards */
+.product-link,
+.product-link:link,
+.product-link:visited,
+.product-link:hover,
+.product-link:active {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+/* Ensure inner text also doesn't turn blue */
+.product-link * {
+    text-decoration: none !important;
+    color: inherit !important;
+}
 
