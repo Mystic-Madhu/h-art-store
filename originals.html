@@ -79,11 +79,18 @@
             max-width: 700px;
             margin: 0 auto;
         }
+
+        /* grid & cards */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 2.5rem;
             margin-top: 3rem;
+        }
+        .product-link {
+            display: block;           /* ensure the anchor is a block and wraps the whole card */
+            text-decoration: none;
+            color: inherit;
         }
         .product-card {
             background: white;
@@ -92,6 +99,9 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             cursor: pointer;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         .product-card:hover {
             transform: translateY(-8px);
@@ -101,18 +111,24 @@
             position: relative;
             overflow: hidden;
             height: 250px;
+            flex: 0 0 250px;
         }
         .product-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: all 0.3s ease;
+            display: block;
         }
         .product-image:hover img {
             transform: scale(1.1);
         }
         .product-info {
             padding: 1.5rem;
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .product-info h3 {
             color: #d4c3b2;
@@ -124,6 +140,7 @@
             margin-bottom: 1rem;
             font-size: 0.95rem;
             line-height: 1.5;
+            flex: 1 1 auto;
         }
         .product-details {
             display: flex;
@@ -150,13 +167,18 @@
             padding: 2rem;
             margin-top: 4rem;
         }
-        @media (max-width: 768px) {
-            .nav { 
-                flex-direction: column; 
-                gap: 1rem; 
-                padding: 1rem 20px; 
+        @media (max-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
-            .nav ul { 
+        }
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 20px;
+            }
+            .nav ul {
                 gap: 1rem;
                 flex-wrap: wrap;
                 justify-content: center;
@@ -192,417 +214,472 @@
             </div>
             
             <div class="product-grid">
-                <!-- Hindu Calendar Collection - Canvas -->
+                <!-- Each card is wrapped in an anchor that points to painting.html?id=slug -->
+                
                 <a class="product-link" href="painting.html?id=chaitra">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Chaitra_wavylr.jpg" alt="Chaitra">
-                    </div>
-                    <div class="product-info">
-                        <h3>Chaitra</h3>
-                        <p class="product-description">Spring blooms and new beginnings mark the first month of the Hindu calendar.</p>
-                        <div class="product-details">
-                            <span class="product-size">10" × 12" Canvas</span>
-                            <p class="price">₹10,000</p>
-                        </div>
-                    </div>
-                </div>
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Chaitra_wavylr.jpg" alt="Chaitra">
+                      </div>
+                      <div class="product-info">
+                          <h3>Chaitra</h3>
+                          <p class="product-description">Spring blooms and new beginnings mark the first month of the Hindu calendar.</p>
+                          <div class="product-details">
+                              <span class="product-size">10" × 12" Canvas</span>
+                              <p class="price">₹10,000</p>
+                          </div>
+                      </div>
+                  </div>
                 </a>
-                <div class="product-card">
-                    <a class="product-link" href="painting.html?id=vaishakh">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763295097/Vaishakh_z0qa1m.jpg" alt="Vaishakh">
-                    </div>
-                    <div class="product-info">
-                        <h3>Vaishakh</h3>
-                        <p class="product-description">Vibrant flowers and warm sunshine celebrate the beauty of summer's arrival.</p>
-                        <div class="product-details">
-                            <span class="product-size">10" × 12" Canvas</span>
-                            <p class="price">₹10,000</p>
-                        </div>
-                    </div>
-                </div>
+
+                <a class="product-link" href="painting.html?id=vaishakh">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763295097/Vaishakh_z0qa1m.jpg" alt="Vaishakh">
+                      </div>
+                      <div class="product-info">
+                          <h3>Vaishakh</h3>
+                          <p class="product-description">Vibrant flowers and warm sunshine celebrate the beauty of summer's arrival.</p>
+                          <div class="product-details">
+                              <span class="product-size">10" × 12" Canvas</span>
+                              <p class="price">₹10,000</p>
+                          </div>
+                      </div>
+                  </div>
                 </a>
-                <div class="product-card">
-                    <a class="product-link" href="painting.html?id=jyeshtha">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Jyeshtha_qrweyz.jpg" alt="Jyeshtha">
-                    </div>
-                    <div class="product-info">
-                        <h3>Jyeshtha</h3>
-                        <p class="product-description">The peak of summer brings golden warmth and abundant nature's bounty.</p>
-                        <div class="product-details">
-                            <span class="product-size">10" × 12" Canvas</span>
-                            <p class="price">₹10,000</p>
-                        </div>
-                    </div>
-                </div>
+
+                <a class="product-link" href="painting.html?id=jyeshtha">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Jyeshtha_qrweyz.jpg" alt="Jyeshtha">
+                      </div>
+                      <div class="product-info">
+                          <h3>Jyeshtha</h3>
+                          <p class="product-description">The peak of summer brings golden warmth and abundant nature's bounty.</p>
+                          <div class="product-details">
+                              <span class="product-size">10" × 12" Canvas</span>
+                              <p class="price">₹10,000</p>
+                          </div>
+                      </div>
+                  </div>
                 </a>
-                <div class="product-card">
-                    <a class="product-link" href="painting.html?id=ashadh">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Ashadh_ovvtnu.jpg" alt="Ashadh">
-                    </div>
-                    <div class="product-info">
-                        <h3>Ashadh</h3>
-                        <p class="product-description">Monsoon clouds gather, bringing life-giving rains and lush greenery to the land.</p>
-                        <div class="product-details">
-                            <span class="product-size">10" × 12" Canvas</span>
-                            <p class="price">₹10,000</p>
-                        </div>
-                    </div>
-                </div>
+
+                <a class="product-link" href="painting.html?id=ashadh">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Ashadh_ovvtnu.jpg" alt="Ashadh">
+                      </div>
+                      <div class="product-info">
+                          <h3>Ashadh</h3>
+                          <p class="product-description">Monsoon clouds gather, bringing life-giving rains and lush greenery to the land.</p>
+                          <div class="product-details">
+                              <span class="product-size">10" × 12" Canvas</span>
+                              <p class="price">₹10,000</p>
+                          </div>
+                      </div>
+                  </div>
                 </a>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963163/Shrawan_grzsxz.jpg" alt="Shrawan">
-                    </div>
-                    <div class="product-info">
-                        <h3>Shrawan</h3>
-                        <p class="product-description">Sacred month of monsoon, when nature is at its most vibrant and fresh.</p>
-                        <div class="product-details">
-                            <span class="product-size">10" × 12" Canvas</span>
-                            <p class="price">₹10,000</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/BHadrapad_nchz6o.jpg" alt="Bhadrapada">
-                    </div>
-                    <div class="product-info">
-                        <h3>Bhadrapada</h3>
-                        <p class="product-description">Late monsoon beauty with lush landscapes and gentle rain showers.</p>
-                        <div class="product-details">
-                            <span class="product-size">10" × 12" Canvas</span>
-                            <p class="price">₹10,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=shrawan">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963163/Shrawan_grzsxz.jpg" alt="Shrawan">
+                      </div>
+                      <div class="product-info">
+                          <h3>Shrawan</h3>
+                          <p class="product-description">Sacred month of monsoon, when nature is at its most vibrant and fresh.</p>
+                          <div class="product-details">
+                              <span class="product-size">10" × 12" Canvas</span>
+                              <p class="price">₹10,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Ashwin_g5ley6.jpg" alt="Ashwin">
-                    </div>
-                    <div class="product-info">
-                        <h3>Ashwin</h3>
-                        <p class="product-description">Festive autumn month bringing celebrations and harvest abundance.</p>
-                        <div class="product-details">
-                            <span class="product-size">10" × 12" Canvas</span>
-                            <p class="price">₹10,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=bhadrapada">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/BHadrapad_nchz6o.jpg" alt="Bhadrapada">
+                      </div>
+                      <div class="product-info">
+                          <h3>Bhadrapada</h3>
+                          <p class="product-description">Late monsoon beauty with lush landscapes and gentle rain showers.</p>
+                          <div class="product-details">
+                              <span class="product-size">10" × 12" Canvas</span>
+                              <p class="price">₹10,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963114/Karthik_uvb6ub.jpg" alt="Karthik">
-                    </div>
-                    <div class="product-info">
-                        <h3>Karthik</h3>
-                        <p class="product-description">Month of lights and lamps, celebrating joy and spiritual awakening.</p>
-                        <div class="product-details">
-                            <span class="product-size">10" × 12" Canvas</span>
-                            <p class="price">₹10,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=ashwin">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Ashwin_g5ley6.jpg" alt="Ashwin">
+                      </div>
+                      <div class="product-info">
+                          <h3>Ashwin</h3>
+                          <p class="product-description">Festive autumn month bringing celebrations and harvest abundance.</p>
+                          <div class="product-details">
+                              <span class="product-size">10" × 12" Canvas</span>
+                              <p class="price">₹10,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963115/Margashirsha_cbewfi.jpg" alt="Margashirsha">
-                    </div>
-                    <div class="product-info">
-                        <h3>Margashirsha</h3>
-                        <p class="product-description">Pleasant winter begins with cool breezes and serene natural beauty.</p>
-                        <div class="product-details">
-                            <span class="product-size">10" × 12" Canvas</span>
-                            <p class="price">₹10,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=karthik">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963114/Karthik_uvb6ub.jpg" alt="Karthik">
+                      </div>
+                      <div class="product-info">
+                          <h3>Karthik</h3>
+                          <p class="product-description">Month of lights and lamps, celebrating joy and spiritual awakening.</p>
+                          <div class="product-details">
+                              <span class="product-size">10" × 12" Canvas</span>
+                              <p class="price">₹10,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963115/Paush_fmtxty.jpg" alt="Pausha">
-                    </div>
-                    <div class="product-info">
-                        <h3>Pausha</h3>
-                        <p class="product-description">Heart of winter brings crisp mornings and peaceful, misty landscapes.</p>
-                        <div class="product-details">
-                            <span class="product-size">10" × 12" Canvas</span>
-                            <p class="price">₹10,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=margashirsha">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963115/Margashirsha_cbewfi.jpg" alt="Margashirsha">
+                      </div>
+                      <div class="product-info">
+                          <h3>Margashirsha</h3>
+                          <p class="product-description">Pleasant winter begins with cool breezes and serene natural beauty.</p>
+                          <div class="product-details">
+                              <span class="product-size">10" × 12" Canvas</span>
+                              <p class="price">₹10,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963114/Magh_lkzd6o.jpg" alt="Magh">
-                    </div>
-                    <div class="product-info">
-                        <h3>Magh</h3>
-                        <p class="product-description">Sacred winter month of spiritual gatherings and holy celebrations.</p>
-                        <div class="product-details">
-                            <span class="product-size">10" × 12" Canvas</span>
-                            <p class="price">₹10,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=pausha">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963115/Paush_fmtxty.jpg" alt="Pausha">
+                      </div>
+                      <div class="product-info">
+                          <h3>Pausha</h3>
+                          <p class="product-description">Heart of winter brings crisp mornings and peaceful, misty landscapes.</p>
+                          <div class="product-details">
+                              <span class="product-size">10" × 12" Canvas</span>
+                              <p class="price">₹10,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963112/Falgun_g6b5p3.jpg" alt="Falgun">
-                    </div>
-                    <div class="product-info">
-                        <h3>Falgun</h3>
-                        <p class="product-description">Spring's arrival brings colorful festivities and nature's renewal.</p>
-                        <div class="product-details">
-                            <span class="product-size">10" × 12" Canvas</span>
-                            <p class="price">₹10,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=magh">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963114/Magh_lkzd6o.jpg" alt="Magh">
+                      </div>
+                      <div class="product-info">
+                          <h3>Magh</h3>
+                          <p class="product-description">Sacred winter month of spiritual gatherings and holy celebrations.</p>
+                          <div class="product-details">
+                              <span class="product-size">10" × 12" Canvas</span>
+                              <p class="price">₹10,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
+
+                <a class="product-link" href="painting.html?id=falgun">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963112/Falgun_g6b5p3.jpg" alt="Falgun">
+                      </div>
+                      <div class="product-info">
+                          <h3>Falgun</h3>
+                          <p class="product-description">Spring's arrival brings colorful festivities and nature's renewal.</p>
+                          <div class="product-details">
+                              <span class="product-size">10" × 12" Canvas</span>
+                              <p class="price">₹10,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
                 <!-- New A4 Paper Paintings -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763315353/highway_d2e1k2.jpg" alt="Highway Journey">
-                    </div>
-                    <div class="product-info">
-                        <h3>Highway Journey</h3>
-                        <p class="product-description">Open road stretching toward distant mountains under a colorful sky.</p>
-                        <div class="product-details">
-                            <span class="product-size">A4 Paper</span>
-                            <p class="price">₹5,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=highway">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763315353/highway_d2e1k2.jpg" alt="Highway Journey">
+                      </div>
+                      <div class="product-info">
+                          <h3>Highway Journey</h3>
+                          <p class="product-description">Open road stretching toward distant mountains under a colorful sky.</p>
+                          <div class="product-details">
+                              <span class="product-size">A4 Paper</span>
+                              <p class="price">₹5,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312918/bowl_of_heath_hke0f0.jpg" alt="Bowl of Health">
-                    </div>
-                    <div class="product-info">
-                        <h3>Bowl of Health</h3>
-                        <p class="product-description">Fresh fruits and vibrant colors celebrating nature's nutritious bounty.</p>
-                        <div class="product-details">
-                            <span class="product-size">A4 Paper</span>
-                            <p class="price">₹5,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=bowl_of_health">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312918/bowl_of_heath_hke0f0.jpg" alt="Bowl of Health">
+                      </div>
+                      <div class="product-info">
+                          <h3>Bowl of Health</h3>
+                          <p class="product-description">Fresh fruits and vibrant colors celebrating nature's nutritious bounty.</p>
+                          <div class="product-details">
+                              <span class="product-size">A4 Paper</span>
+                              <p class="price">₹5,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312727/garden_chai_wala_rvfpch.jpg" alt="Garden Chai Wala">
-                    </div>
-                    <div class="product-info">
-                        <h3>Garden Chai Wala</h3>
-                        <p class="product-description">Traditional chai seller amid blooming garden flowers and greenery.</p>
-                        <div class="product-details">
-                            <span class="product-size">A4 Paper</span>
-                            <p class="price">₹5,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=garden_chai_wala">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312727/garden_chai_wala_rvfpch.jpg" alt="Garden Chai Wala">
+                      </div>
+                      <div class="product-info">
+                          <h3>Garden Chai Wala</h3>
+                          <p class="product-description">Traditional chai seller amid blooming garden flowers and greenery.</p>
+                          <div class="product-details">
+                              <span class="product-size">A4 Paper</span>
+                              <p class="price">₹5,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312790/city_vibes_ixg0al.jpg" alt="City Vibes">
-                    </div>
-                    <div class="product-info">
-                        <h3>City Vibes</h3>
-                        <p class="product-description">Urban landscape with buildings and streets captured in vibrant colors.</p>
-                        <div class="product-details">
-                            <span class="product-size">A4 Paper</span>
-                            <p class="price">₹5,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=city_vibes">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312790/city_vibes_ixg0al.jpg" alt="City Vibes">
+                      </div>
+                      <div class="product-info">
+                          <h3>City Vibes</h3>
+                          <p class="product-description">Urban landscape with buildings and streets captured in vibrant colors.</p>
+                          <div class="product-details">
+                              <span class="product-size">A4 Paper</span>
+                              <p class="price">₹5,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312823/bridge_sfixei.jpg" alt="The Bridge">
-                    </div>
-                    <div class="product-info">
-                        <h3>The Bridge</h3>
-                        <p class="product-description">Rustic bridge over peaceful waters connecting nature's two sides.</p>
-                        <div class="product-details">
-                            <span class="product-size">A4 Paper</span>
-                            <p class="price">₹5,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=the_bridge">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312823/bridge_sfixei.jpg" alt="The Bridge">
+                      </div>
+                      <div class="product-info">
+                          <h3>The Bridge</h3>
+                          <p class="product-description">Rustic bridge over peaceful waters connecting nature's two sides.</p>
+                          <div class="product-details">
+                              <span class="product-size">A4 Paper</span>
+                              <p class="price">₹5,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312862/boat_journey_nlzaei.jpg" alt="Boat Journey">
-                    </div>
-                    <div class="product-info">
-                        <h3>Boat Journey</h3>
-                        <p class="product-description">Serene boat sailing through calm waters under a tranquil sky.</p>
-                        <div class="product-details">
-                            <span class="product-size">A4 Paper</span>
-                            <p class="price">₹5,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=boat_journey">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312862/boat_journey_nlzaei.jpg" alt="Boat Journey">
+                      </div>
+                      <div class="product-info">
+                          <h3>Boat Journey</h3>
+                          <p class="product-description">Serene boat sailing through calm waters under a tranquil sky.</p>
+                          <div class="product-details">
+                              <span class="product-size">A4 Paper</span>
+                              <p class="price">₹5,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312694/just_u_n_me_dd55pi.jpg" alt="Just You & Me">
-                    </div>
-                    <div class="product-info">
-                        <h3>Just You & Me</h3>
-                        <p class="product-description">Romantic moment captured with two figures in a beautiful setting.</p>
-                        <div class="product-details">
-                            <span class="product-size">A4 Paper</span>
-                            <p class="price">₹5,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=just_u_n_me">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312694/just_u_n_me_dd55pi.jpg" alt="Just You & Me">
+                      </div>
+                      <div class="product-info">
+                          <h3>Just You & Me</h3>
+                          <p class="product-description">Romantic moment captured with two figures in a beautiful setting.</p>
+                          <div class="product-details">
+                              <span class="product-size">A4 Paper</span>
+                              <p class="price">₹5,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763315426/moon_tlskhv.jpg" alt="Moonlit Night">
-                    </div>
-                    <div class="product-info">
-                        <h3>Moonlit Night</h3>
-                        <p class="product-description">Glowing moon illuminating the night sky with soft, magical light.</p>
-                        <div class="product-details">
-                            <span class="product-size">A4 Paper</span>
-                            <p class="price">₹5,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=moon">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763315426/moon_tlskhv.jpg" alt="Moonlit Night">
+                      </div>
+                      <div class="product-info">
+                          <h3>Moonlit Night</h3>
+                          <p class="product-description">Glowing moon illuminating the night sky with soft, magical light.</p>
+                          <div class="product-details">
+                              <span class="product-size">A4 Paper</span>
+                              <p class="price">₹5,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312646/land_qal3or.jpg" alt="The Land">
-                    </div>
-                    <div class="product-info">
-                        <h3>The Land</h3>
-                        <p class="product-description">Expansive countryside landscape with rolling fields and open horizons.</p>
-                        <div class="product-details">
-                            <span class="product-size">A4 Paper</span>
-                            <p class="price">₹5,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=the_land">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312646/land_qal3or.jpg" alt="The Land">
+                      </div>
+                      <div class="product-info">
+                          <h3>The Land</h3>
+                          <p class="product-description">Expansive countryside landscape with rolling fields and open horizons.</p>
+                          <div class="product-details">
+                              <span class="product-size">A4 Paper</span>
+                              <p class="price">₹5,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312611/garden_of91eh.jpg" alt="Secret Garden">
-                    </div>
-                    <div class="product-info">
-                        <h3>Secret Garden</h3>
-                        <p class="product-description">Hidden garden sanctuary filled with blooming flowers and lush plants.</p>
-                        <div class="product-details">
-                            <span class="product-size">A4 Paper</span>
-                            <p class="price">₹5,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=secret_garden">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312611/garden_of91eh.jpg" alt="Secret Garden">
+                      </div>
+                      <div class="product-info">
+                          <h3>Secret Garden</h3>
+                          <p class="product-description">Hidden garden sanctuary filled with blooming flowers and lush plants.</p>
+                          <div class="product-details">
+                              <span class="product-size">A4 Paper</span>
+                              <p class="price">₹5,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312442/summers_calling_eda0e8.jpg" alt="Summer's Calling">
-                    </div>
-                    <div class="product-info">
-                        <h3>Summer's Calling</h3>
-                        <p class="product-description">Bright summer day inviting you to enjoy nature's warmth and beauty.</p>
-                        <div class="product-details">
-                            <span class="product-size">A4 Paper</span>
-                            <p class="price">₹5,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=summers_calling">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312442/summers_calling_eda0e8.jpg" alt="Summer's Calling">
+                      </div>
+                      <div class="product-info">
+                          <h3>Summer's Calling</h3>
+                          <p class="product-description">Bright summer day inviting you to enjoy nature's warmth and beauty.</p>
+                          <div class="product-details">
+                              <span class="product-size">A4 Paper</span>
+                              <p class="price">₹5,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312518/to_build_a_home_ragfcm.jpg" alt="To Build a Home">
-                    </div>
-                    <div class="product-info">
-                        <h3>To Build a Home</h3>
-                        <p class="product-description">Cozy house surrounded by nature, representing warmth and belonging.</p>
-                        <div class="product-details">
-                            <span class="product-size">A4 Paper</span>
-                            <p class="price">₹5,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=to_build_a_home">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312518/to_build_a_home_ragfcm.jpg" alt="To Build a Home">
+                      </div>
+                      <div class="product-info">
+                          <h3>To Build a Home</h3>
+                          <p class="product-description">Cozy house surrounded by nature, representing warmth and belonging.</p>
+                          <div class="product-details">
+                              <span class="product-size">A4 Paper</span>
+                              <p class="price">₹5,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312572/night_we_met_mi2vwm.jpg" alt="The Night We Met">
-                    </div>
-                    <div class="product-info">
-                        <h3>The Night We Met</h3>
-                        <p class="product-description">Magical evening scene capturing a special moment under starlight.</p>
-                        <div class="product-details">
-                            <span class="product-size">A4 Paper</span>
-                            <p class="price">₹5,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=the_night_we_met">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312572/night_we_met_mi2vwm.jpg" alt="The Night We Met">
+                      </div>
+                      <div class="product-info">
+                          <h3>The Night We Met</h3>
+                          <p class="product-description">Magical evening scene capturing a special moment under starlight.</p>
+                          <div class="product-details">
+                              <span class="product-size">A4 Paper</span>
+                              <p class="price">₹5,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312365/soulmates_pupfct.jpg" alt="Soulmates">
-                    </div>
-                    <div class="product-info">
-                        <h3>Soulmates</h3>
-                        <p class="product-description">Two hearts intertwined in perfect harmony and eternal connection.</p>
-                        <div class="product-details">
-                            <span class="product-size">A4 Paper</span>
-                            <p class="price">₹5,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=soulmates">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312365/soulmates_pupfct.jpg" alt="Soulmates">
+                      </div>
+                      <div class="product-info">
+                          <h3>Soulmates</h3>
+                          <p class="product-description">Two hearts intertwined in perfect harmony and eternal connection.</p>
+                          <div class="product-details">
+                              <span class="product-size">A4 Paper</span>
+                              <p class="price">₹5,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312196/sunflower_field_iiftgb.jpg" alt="Sunflower Field">
-                    </div>
-                    <div class="product-info">
-                        <h3>Sunflower Field</h3>
-                        <p class="product-description">Golden sunflowers swaying in the breeze under bright summer sun.</p>
-                        <div class="product-details">
-                            <span class="product-size">A4 Paper</span>
-                            <p class="price">₹5,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=sunflower_field">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312196/sunflower_field_iiftgb.jpg" alt="Sunflower Field">
+                      </div>
+                      <div class="product-info">
+                          <h3>Sunflower Field</h3>
+                          <p class="product-description">Golden sunflowers swaying in the breeze under bright summer sun.</p>
+                          <div class="product-details">
+                              <span class="product-size">A4 Paper</span>
+                              <p class="price">₹5,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763313617/golden_sunset_1_2_odjxxs.jpg" alt="Golden Sunset">
-                    </div>
-                    <div class="product-info">
-                        <h3>Golden Sunset</h3>
-                        <p class="product-description">Warm golden hues painting the sky as day transitions to night.</p>
-                        <div class="product-details">
-                            <span class="product-size">A4 Paper</span>
-                            <p class="price">₹5,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=golden_sunset">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763313617/golden_sunset_1_2_odjxxs.jpg" alt="Golden Sunset">
+                      </div>
+                      <div class="product-info">
+                          <h3>Golden Sunset</h3>
+                          <p class="product-description">Warm golden hues painting the sky as day transitions to night.</p>
+                          <div class="product-details">
+                              <span class="product-size">A4 Paper</span>
+                              <p class="price">₹5,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
 
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763313575/old_tree_1_xo1qir.jpg" alt="The Old Tree">
-                    </div>
-                    <div class="product-info">
-                        <h3>The Old Tree</h3>
-                        <p class="product-description">Ancient tree standing tall, witness to countless seasons and stories.</p>
-                        <div class="product-details">
-                            <span class="product-size">A4 Paper</span>
-                            <p class="price">₹5,000</p>
-                        </div>
-                    </div>
-                </div>
+                <a class="product-link" href="painting.html?id=the_old_tree">
+                  <div class="product-card">
+                      <div class="product-image">
+                          <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1763313575/old_tree_1_xo1qir.jpg" alt="The Old Tree">
+                      </div>
+                      <div class="product-info">
+                          <h3>The Old Tree</h3>
+                          <p class="product-description">Ancient tree standing tall, witness to countless seasons and stories.</p>
+                          <div class="product-details">
+                              <span class="product-size">A4 Paper</span>
+                              <p class="price">₹5,000</p>
+                          </div>
+                      </div>
+                  </div>
+                </a>
             </div>
         </div>
     </main>
