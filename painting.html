@@ -6,19 +6,19 @@
   <title>Painting details - H Art Store</title>
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    /* page-specific styles (move to style.css if you prefer) */
+    /* page-specific styles */
     .container { max-width: 980px; margin: 48px auto; padding: 0 20px; }
     .back-link { display:inline-block; margin-bottom:16px; color:#7d6c61; text-decoration:none; }
     .detail-wrap { display:flex; gap:32px; align-items:flex-start; flex-wrap:wrap; }
     .detail-img { flex: 0 0 420px; max-width:420px; }
-    .detail-img img { width:100%; height:auto; border-radius:8px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+    .detail-img img { width:100%; height:auto; border-radius:8px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); display:block; }
     .detail-meta { flex:1; min-width:260px; }
-    .detail-meta h1 { margin-top:0; font-size:28px; color:#333; }
+    .detail-meta h1 { margin-top:0; font-size:28px; color:#333; font-family: 'Playfair Display', Georgia, serif; }
     .detail-meta .price { color:#c48b2c; font-weight:700; margin:8px 0; font-size:20px; }
     .detail-meta .specs { color:#777; margin:10px 0; font-size:14px; }
     .detail-meta p.description { color:#444; line-height:1.6; }
     .button { display:inline-block; padding:10px 14px; border-radius:6px; background:#7d6c61; color:#fff; text-decoration:none; margin-right:8px; }
-    .not-found { text-align:center; padding:60px 0; color:#666; }
+    .not-found { text-align:center; padding:60px 0; color:#666; font-family: 'Source Sans Pro', Arial, sans-serif; }
   </style>
 </head>
 <body>
@@ -26,31 +26,219 @@
     <a class="back-link" href="originals.html">&larr; Back to Originals</a>
 
     <div id="content">
-      <!-- JS will inject the painting detail here -->
+      <!-- JS will inject painting detail here -->
     </div>
   </div>
 
   <script>
-    // ---- PAINTINGS MAP: update these entries with your actual image URLs and data ----
+    // PAINTINGS map built from your originals.html entries
     const PAINTINGS = {
       "chaitra": {
         "title": "Chaitra",
         "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Chaitra_wavylr.jpg",
         "price": "₹10,000",
         "dimensions": "10\" × 12\" Canvas",
-        "description": "Spring blossoms and new beginnings mark the first month of the Hindu calendar. One-of-a-kind, hand-painted original."
+        "description": "Spring blooms and new beginnings mark the first month of the Hindu calendar."
       },
       "vaishakh": {
         "title": "Vaishakh",
-        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763295097/Vaishakh_z0qaim.jpg",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763295097/Vaishakh_z0qa1m.jpg",
         "price": "₹10,000",
         "dimensions": "10\" × 12\" Canvas",
         "description": "Vibrant flowers and warm sunshine celebrate the beauty of summer's arrival."
+      },
+      "jyeshtha": {
+        "title": "Jyeshtha",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Jyeshtha_qrweyz.jpg",
+        "price": "₹10,000",
+        "dimensions": "10\" × 12\" Canvas",
+        "description": "The peak of summer brings golden warmth and abundant nature's bounty."
+      },
+      "ashadh": {
+        "title": "Ashadh",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Ashadh_ovvtnu.jpg",
+        "price": "₹10,000",
+        "dimensions": "10\" × 12\" Canvas",
+        "description": "Monsoon clouds gather, bringing life-giving rains and lush greenery to the land."
+      },
+      "shrawan": {
+        "title": "Shrawan",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963163/Shrawan_grzsxz.jpg",
+        "price": "₹10,000",
+        "dimensions": "10\" × 12\" Canvas",
+        "description": "Sacred month of monsoon, when nature is at its most vibrant and fresh."
+      },
+      "bhadrapada": {
+        "title": "Bhadrapada",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/BHadrapad_nchz6o.jpg",
+        "price": "₹10,000",
+        "dimensions": "10\" × 12\" Canvas",
+        "description": "Late monsoon beauty with lush landscapes and gentle rain showers."
+      },
+      "ashwin": {
+        "title": "Ashwin",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Ashwin_g5ley6.jpg",
+        "price": "₹10,000",
+        "dimensions": "10\" × 12\" Canvas",
+        "description": "Festive autumn month bringing celebrations and harvest abundance."
+      },
+      "karthik": {
+        "title": "Karthik",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963114/Karthik_uvb6ub.jpg",
+        "price": "₹10,000",
+        "dimensions": "10\" × 12\" Canvas",
+        "description": "Month of lights and lamps, celebrating joy and spiritual awakening."
+      },
+      "margashirsha": {
+        "title": "Margashirsha",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963115/Margashirsha_cbewfi.jpg",
+        "price": "₹10,000",
+        "dimensions": "10\" × 12\" Canvas",
+        "description": "Pleasant winter begins with cool breezes and serene natural beauty."
+      },
+      "pausha": {
+        "title": "Pausha",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963115/Paush_fmtxty.jpg",
+        "price": "₹10,000",
+        "dimensions": "10\" × 12\" Canvas",
+        "description": "Heart of winter brings crisp mornings and peaceful, misty landscapes."
+      },
+      "magh": {
+        "title": "Magh",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963114/Magh_lkzd6o.jpg",
+        "price": "₹10,000",
+        "dimensions": "10\" × 12\" Canvas",
+        "description": "Sacred winter month of spiritual gatherings and holy celebrations."
+      },
+      "falgun": {
+        "title": "Falgun",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963112/Falgun_g6b5p3.jpg",
+        "price": "₹10,000",
+        "dimensions": "10\" × 12\" Canvas",
+        "description": "Spring's arrival brings colorful festivities and nature's renewal."
+      },
+      "highway": {
+        "title": "Highway Journey",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763315353/highway_d2e1k2.jpg",
+        "price": "₹5,000",
+        "dimensions": "A4 Paper",
+        "description": "Open road stretching toward distant mountains under a colorful sky."
+      },
+      "bowl_of_health": {
+        "title": "Bowl of Health",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312918/bowl_of_heath_hke0f0.jpg",
+        "price": "₹5,000",
+        "dimensions": "A4 Paper",
+        "description": "Fresh fruits and vibrant colors celebrating nature's nutritious bounty."
+      },
+      "garden_chai_wala": {
+        "title": "Garden Chai Wala",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312727/garden_chai_wala_rvfpch.jpg",
+        "price": "₹5,000",
+        "dimensions": "A4 Paper",
+        "description": "Traditional chai seller amid blooming garden flowers and greenery."
+      },
+      "city_vibes": {
+        "title": "City Vibes",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312790/city_vibes_ixg0al.jpg",
+        "price": "₹5,000",
+        "dimensions": "A4 Paper",
+        "description": "Urban landscape with buildings and streets captured in vibrant colors."
+      },
+      "the_bridge": {
+        "title": "The Bridge",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312823/bridge_sfixei.jpg",
+        "price": "₹5,000",
+        "dimensions": "A4 Paper",
+        "description": "Rustic bridge over peaceful waters connecting nature's two sides."
+      },
+      "boat_journey": {
+        "title": "Boat Journey",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312862/boat_journey_nlzaei.jpg",
+        "price": "₹5,000",
+        "dimensions": "A4 Paper",
+        "description": "Serene boat sailing through calm waters under a tranquil sky."
+      },
+      "just_u_n_me": {
+        "title": "Just You & Me",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312694/just_u_n_me_dd55pi.jpg",
+        "price": "₹5,000",
+        "dimensions": "A4 Paper",
+        "description": "Romantic moment captured with two figures in a beautiful setting."
+      },
+      "moon": {
+        "title": "Moonlit Night",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763315426/moon_tlskhv.jpg",
+        "price": "₹5,000",
+        "dimensions": "A4 Paper",
+        "description": "Glowing moon illuminating the night sky with soft, magical light."
+      },
+      "the_land": {
+        "title": "The Land",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312646/land_qal3or.jpg",
+        "price": "₹5,000",
+        "dimensions": "A4 Paper",
+        "description": "Expansive countryside landscape with rolling fields and open horizons."
+      },
+      "secret_garden": {
+        "title": "Secret Garden",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312611/garden_of91eh.jpg",
+        "price": "₹5,000",
+        "dimensions": "A4 Paper",
+        "description": "Hidden garden sanctuary filled with blooming flowers and lush plants."
+      },
+      "summers_calling": {
+        "title": "Summer's Calling",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312442/summers_calling_eda0e8.jpg",
+        "price": "₹5,000",
+        "dimensions": "A4 Paper",
+        "description": "Bright summer day inviting you to enjoy nature's warmth and beauty."
+      },
+      "to_build_a_home": {
+        "title": "To Build a Home",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312518/to_build_a_home_ragfcm.jpg",
+        "price": "₹5,000",
+        "dimensions": "A4 Paper",
+        "description": "Cozy house surrounded by nature, representing warmth and belonging."
+      },
+      "the_night_we_met": {
+        "title": "The Night We Met",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312572/night_we_met_mi2vwm.jpg",
+        "price": "₹5,000",
+        "dimensions": "A4 Paper",
+        "description": "Magical evening scene capturing a special moment under starlight."
+      },
+      "soulmates": {
+        "title": "Soulmates",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312365/soulmates_pupfct.jpg",
+        "price": "₹5,000",
+        "dimensions": "A4 Paper",
+        "description": "Two hearts intertwined in perfect harmony and eternal connection."
+      },
+      "sunflower_field": {
+        "title": "Sunflower Field",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312196/sunflower_field_iiftgb.jpg",
+        "price": "₹5,000",
+        "dimensions": "A4 Paper",
+        "description": "Golden sunflowers swaying in the breeze under bright summer sun."
+      },
+      "golden_sunset": {
+        "title": "Golden Sunset",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763313617/golden_sunset_1_2_odjxxs.jpg",
+        "price": "₹5,000",
+        "dimensions": "A4 Paper",
+        "description": "Warm golden hues painting the sky as day transitions to night."
+      },
+      "the_old_tree": {
+        "title": "The Old Tree",
+        "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763313575/old_tree_1_xo1qir.jpg",
+        "price": "₹5,000",
+        "dimensions": "A4 Paper",
+        "description": "Ancient tree standing tall, witness to countless seasons and stories."
       }
-      // <-- Add more entries here, e.g. "jyeshtha": { title, image, price, dimensions, description }
     };
-    // ----------------------------------------------------------------------------------
 
+    // read id from query
     function getIdFromQuery() {
       const params = new URLSearchParams(window.location.search);
       return params.get('id');
@@ -69,7 +257,7 @@
     function renderNotFound() {
       document.getElementById('content').innerHTML = `
         <div class="not-found">
-          <h2>Painting not found</h2>
+          <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size:44px; color:#c9b5a0;">Painting not found</h2>
           <p>We couldn't find that painting. <a href="originals.html">Return to Originals</a></p>
         </div>
       `;
@@ -102,7 +290,7 @@
       document.getElementById('content').innerHTML = html;
     }
 
-    // Initialize
+    // initialize
     const id = (getIdFromQuery() || '').toLowerCase();
     if (id) {
       renderPainting(id);
