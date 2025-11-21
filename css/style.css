@@ -280,3 +280,15 @@ footer {
         padding: 1.5rem;
     }
 }
+/* Make entire card clickable */
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.product-link .product-card {
+  height: 100%;
+  box-sizing: border-box;
+}
+
