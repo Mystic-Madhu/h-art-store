@@ -15,11 +15,10 @@
             font-family: 'Source Sans Pro', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f9f9f9;
+            background-color: #ffffff;
         }
         h1, h2, h3 {
             font-family: 'Playfair Display', Georgia, serif;
-            margin-bottom: 1rem;
             font-weight: 500;
         }
         .header {
@@ -61,160 +60,249 @@
             margin: 20px auto;
             padding: 0 20px;
             font-size: 0.9rem;
-            color: #666;
+            color: #999;
         }
         .breadcrumb a {
-            color: #c9b5a0;
+            color: #666;
             text-decoration: none;
         }
         .breadcrumb a:hover {
-            text-decoration: underline;
+            color: #c9b5a0;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
         }
-        .painting-detail {
+        .product-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
-            background: white;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 3rem;
         }
-        .image-section {
+        
+        /* Left Side - Image Gallery */
+        .image-gallery {
+            display: flex;
+            gap: 1rem;
+        }
+        .thumbnail-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .thumbnail:hover, .thumbnail.active {
+            border-color: #c9b5a0;
+        }
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .main-image-container {
+            flex: 1;
+            position: relative;
+        }
+        .main-image-box {
+            width: 100%;
+            height: 500px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f5f5f5;
             position: relative;
         }
         .main-image {
             width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
         }
-        .info-section h1 {
+        .main-image:hover {
+            transform: scale(1.05);
+        }
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        .nav-arrow:hover {
+            background: #c9b5a0;
+            color: white;
+        }
+        .nav-arrow.prev { left: 10px; }
+        .nav-arrow.next { right: 10px; }
+        
+        /* Right Side - Product Info */
+        .product-info {
+            padding: 1rem 0;
+        }
+        .brand-name {
+            color: #999;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        .product-title {
             font-size: 2.5rem;
-            color: #d4c3b2;
+            color: #2c2c2c;
             margin-bottom: 1rem;
+            line-height: 1.2;
         }
         .price-section {
-            background: #f8f6f4;
-            padding: 1.5rem;
-            border-radius: 8px;
             margin: 1.5rem 0;
         }
         .price {
-            font-size: 2rem;
-            color: #c9b5a0;
-            font-weight: bold;
+            font-size: 1.8rem;
+            color: #2c2c2c;
+            font-weight: 600;
         }
-        .original-badge {
-            display: inline-block;
-            background: #d4c3b2;
-            color: white;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
+        .tax-note {
+            color: #666;
             font-size: 0.85rem;
-            margin-top: 0.5rem;
+            margin-top: 0.3rem;
         }
-        .description {
+        .tax-note a {
+            color: #c9b5a0;
+            text-decoration: underline;
+        }
+        .quantity-section {
             margin: 2rem 0;
+        }
+        .quantity-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .quantity-btn {
+            width: 35px;
+            height: 35px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        .quantity-btn:hover {
+            border-color: #c9b5a0;
+            color: #c9b5a0;
+        }
+        .quantity-input {
+            width: 60px;
+            height: 35px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .add-to-cart-btn {
+            width: 100%;
+            padding: 1rem;
+            background: #2c2c2c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .add-to-cart-btn:hover {
+            background: #c9b5a0;
+        }
+        
+        /* About Painting Section */
+        .about-section {
+            border-top: 3px solid #8b4789;
+            padding-top: 2rem;
+        }
+        .about-section h2 {
+            font-size: 2rem;
+            color: #8b4789;
+            margin-bottom: 2rem;
+        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        .about-description {
             line-height: 1.8;
             color: #555;
             font-size: 1.05rem;
         }
-        .specifications {
-            margin: 2rem 0;
+        .specifications-box {
+            background: #f8f6f4;
+            padding: 2rem;
+            border-radius: 8px;
         }
-        .specifications h3 {
-            color: #d4c3b2;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #d4c3b2;
-            padding-bottom: 0.5rem;
-        }
-        .spec-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 1rem;
+        .specifications-box h3 {
+            color: #c9b5a0;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
         }
         .spec-item {
-            padding: 1rem;
-            background: #f8f6f4;
-            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .spec-item:last-child {
+            border-bottom: none;
         }
         .spec-label {
+            color: #666;
             font-weight: 600;
-            color: #a89584;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
         .spec-value {
-            color: #333;
-            font-size: 1.1rem;
-            margin-top: 0.3rem;
+            color: #2c2c2c;
         }
-        .features {
-            margin: 2rem 0;
-        }
-        .features h3 {
-            color: #d4c3b2;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .features ul {
+        .features-list {
+            margin-top: 2rem;
             list-style: none;
             padding: 0;
         }
-        .features li {
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #eee;
-            color: #555;
-            position: relative;
+        .features-list li {
+            padding: 0.6rem 0;
             padding-left: 1.5rem;
+            position: relative;
+            color: #555;
         }
-        .features li:before {
+        .features-list li:before {
             content: "✓";
             position: absolute;
             left: 0;
-            color: #c9b5a0;
+            color: #8b4789;
             font-weight: bold;
-        }
-        .cta-section {
-            margin-top: 2rem;
-            padding: 2rem;
-            background: linear-gradient(135deg, #d4c3b2, #c9b5a0);
-            border-radius: 8px;
-            text-align: center;
-        }
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #c9b5a0;
-            padding: 1rem 3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        }
-        .shipping-info {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: #f0f8ff;
-            border-left: 4px solid #c9b5a0;
-            border-radius: 4px;
-        }
-        .shipping-info h4 {
-            color: #c9b5a0;
-            margin-bottom: 0.5rem;
         }
         footer {
             background: #a89584;
@@ -223,14 +311,11 @@
             padding: 2rem;
             margin-top: 4rem;
         }
+        
         @media (max-width: 768px) {
-            .painting-detail {
+            .product-layout, .about-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
-                padding: 1.5rem;
-            }
-            .spec-grid {
-                grid-template-columns: 1fr;
             }
             .nav {
                 flex-direction: column;
@@ -240,6 +325,13 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 1rem;
+            }
+            .image-gallery {
+                flex-direction: column-reverse;
+            }
+            .thumbnail-list {
+                flex-direction: row;
+                overflow-x: auto;
             }
         }
     </style>
@@ -259,82 +351,105 @@
     </header>
 
     <div class="breadcrumb">
-        <a href="index.html">Home</a> / <a href="originals.html">Originals</a> / <span id="breadcrumb-title">Painting</span>
+        <a href="index.html">Home</a> / <a href="originals.html">Originals</a> / <span id="breadcrumb-title">Jyeshtha</span>
     </div>
 
     <div class="container">
-        <div class="painting-detail">
-            <div class="image-section">
-                <img id="painting-image" class="main-image" src="" alt="Painting">
-            </div>
-
-            <div class="info-section">
-                <h1 id="painting-title">Painting Title</h1>
-                <span class="original-badge">Original Hand-Painted Artwork</span>
-                
-                <div class="price-section">
-                    <div class="price" id="painting-price">₹10,000</div>
-                    <p style="color: #666; margin-top: 0.5rem; font-size: 0.9rem;">Free shipping across India</p>
-                </div>
-
-                <div class="description">
-                    <p id="painting-description">Beautiful hand-painted artwork capturing the essence of nature.</p>
-                </div>
-
-                <div class="specifications">
-                    <h3>Specifications</h3>
-                    <div class="spec-grid">
-                        <div class="spec-item">
-                            <div class="spec-label">Medium</div>
-                            <div class="spec-value" id="spec-medium">Acrylic on Canvas</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Size</div>
-                            <div class="spec-value" id="spec-size">10" × 12"</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Orientation</div>
-                            <div class="spec-value" id="spec-orientation">Portrait</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Style</div>
-                            <div class="spec-value">Contemporary</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Subject</div>
-                            <div class="spec-value" id="spec-subject">Nature</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">Year</div>
-                            <div class="spec-value">2024-2025</div>
-                        </div>
+        <div class="product-layout">
+            <!-- Left Side - Image Gallery -->
+            <div class="image-gallery">
+                <div class="thumbnail-list">
+                    <div class="thumbnail active" data-index="0">
+                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Chaitra_wavylr.jpg" alt="View 1">
+                    </div>
+                    <div class="thumbnail" data-index="1">
+                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Chaitra_wavylr.jpg" alt="View 2">
+                    </div>
+                    <div class="thumbnail" data-index="2">
+                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Chaitra_wavylr.jpg" alt="View 3">
                     </div>
                 </div>
+                
+                <div class="main-image-container">
+                    <div class="main-image-box">
+                        <img id="main-image" class="main-image" src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Chaitra_wavylr.jpg" alt="Chaitra">
+                        <button class="nav-arrow prev">‹</button>
+                        <button class="nav-arrow next">›</button>
+                    </div>
+                </div>
+            </div>
 
-                <div class="features">
-                    <h3>Features</h3>
-                    <ul>
+            <!-- Right Side - Product Info -->
+            <div class="product-info">
+                <div class="brand-name">ROSEPAINTSTUDIO</div>
+                <h1 class="product-title" id="product-title">CHAITRA</h1>
+                
+                <div class="price-section">
+                    <div class="price" id="product-price">Rs. 10,000.00</div>
+                    <div class="tax-note">Tax included. <a href="#">Shipping</a> calculated at checkout.</div>
+                </div>
+
+                <div class="quantity-section">
+                    <div class="quantity-label">Quantity</div>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" id="decrease-qty">−</button>
+                        <input type="number" class="quantity-input" id="quantity" value="1" min="1" max="10" readonly>
+                        <button class="quantity-btn" id="increase-qty">+</button>
+                    </div>
+                    <button class="add-to-cart-btn">Add to cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Painting Section -->
+        <div class="about-section">
+            <h2>About Painting</h2>
+            <div class="about-content">
+                <div class="about-description">
+                    <p id="full-description">
+                        Spring blooms and new beginnings mark the first month of the Hindu calendar. This vibrant painting captures the essence of renewal and fresh starts with delicate floral motifs and warm spring colors. The artwork celebrates the beauty of nature awakening after winter, featuring intricate details that represent growth, hope, and the cyclical nature of life.
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        Each brushstroke tells a story of transformation and rebirth, making this piece perfect for those seeking to bring positive energy and natural beauty into their living spaces. The careful composition and harmonious color palette create a sense of peace and optimism.
+                    </p>
+                    
+                    <ul class="features-list">
                         <li>100% Original hand-painted artwork</li>
                         <li>One-of-a-kind piece - no reproductions</li>
                         <li>High-quality artist-grade materials</li>
                         <li>Signed by the artist</li>
                         <li>Ready to frame or hang</li>
                         <li>Certificate of authenticity included</li>
+                        <li>Free shipping across India</li>
                     </ul>
                 </div>
 
-                <div class="shipping-info">
-                    <h4>🚚 Shipping Information</h4>
-                    <p>Free shipping across India. Carefully packaged to ensure safe delivery. Estimated delivery: 5-7 business days.</p>
-                </div>
-
-                <div class="cta-section">
-                    <a href="mailto:hartstoreindia@gmail.com?subject=Interest in Purchasing Artwork" class="cta-button">
-                        Inquire to Purchase
-                    </a>
-                    <p style="color: white; margin-top: 1rem; font-size: 0.9rem;">
-                        Contact us for more details or custom requests
-                    </p>
+                <div class="specifications-box">
+                    <h3>Specifications</h3>
+                    <div class="spec-item">
+                        <span class="spec-label">Medium</span>
+                        <span class="spec-value" id="spec-medium">Acrylic on Canvas</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Size</span>
+                        <span class="spec-value" id="spec-size">10" × 12"</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Orientation</span>
+                        <span class="spec-value" id="spec-orientation">Portrait</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Style</span>
+                        <span class="spec-value">Contemporary</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Subject</span>
+                        <span class="spec-value" id="spec-subject">Seasonal Nature</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Year</span>
+                        <span class="spec-value">2024-2025</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -345,329 +460,91 @@
     </footer>
 
     <script>
-        // Painting data for all artworks
+        // Painting data
         const paintings = {
             chaitra: {
-                title: "Chaitra",
+                title: "CHAITRA",
                 description: "Spring blooms and new beginnings mark the first month of the Hindu calendar. This vibrant painting captures the essence of renewal and fresh starts with delicate floral motifs and warm spring colors. The artwork celebrates the beauty of nature awakening after winter, featuring intricate details that represent growth, hope, and the cyclical nature of life.",
-                price: "₹10,000",
+                price: "Rs. 10,000.00",
                 image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Chaitra_wavylr.jpg",
                 medium: "Acrylic on Canvas",
                 size: "10\" × 12\"",
                 orientation: "Portrait",
                 subject: "Seasonal Nature"
-            },
-            vaishakh: {
-                title: "Vaishakh",
-                description: "Vibrant flowers and warm sunshine celebrate the beauty of summer's arrival. This piece radiates energy and warmth, depicting the height of spring when nature is in full bloom. The rich color palette and dynamic composition evoke the joy and vitality of this auspicious month in the Hindu calendar.",
-                price: "₹10,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763295097/Vaishakh_z0qa1m.jpg",
-                medium: "Acrylic on Canvas",
-                size: "10\" × 12\"",
-                orientation: "Portrait",
-                subject: "Summer Florals"
-            },
-            jyeshtha: {
-                title: "Jyeshtha",
-                description: "The peak of summer brings golden warmth and abundant nature's bounty. This artwork captures the intensity and richness of the summer season with bold, warm tones and lush imagery. The painting reflects the fullness of life, abundance, and the powerful energy of nature at its zenith.",
-                price: "₹10,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Jyeshtha_qrweyz.jpg",
-                medium: "Acrylic on Canvas",
-                size: "10\" × 12\"",
-                orientation: "Portrait",
-                subject: "Summer Abundance"
-            },
-            ashadh: {
-                title: "Ashadh",
-                description: "Monsoon clouds gather, bringing life-giving rains and lush greenery to the land. This painting beautifully captures the transition from summer heat to the refreshing monsoon season. The interplay of deep blues, greens, and grays creates a sense of anticipation and renewal as the first rains arrive.",
-                price: "₹10,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Ashadh_ovvtnu.jpg",
-                medium: "Acrylic on Canvas",
-                size: "10\" × 12\"",
-                orientation: "Portrait",
-                subject: "Monsoon Beginning"
-            },
-            shrawan: {
-                title: "Shrawan",
-                description: "Sacred month of monsoon, when nature is at its most vibrant and fresh. This artwork celebrates the peak of the rainy season with lush vegetation, rich greens, and the life-giving essence of water. The painting evokes the spiritual significance of this month while showcasing nature's rejuvenation.",
-                price: "₹10,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963163/Shrawan_grzsxz.jpg",
-                medium: "Acrylic on Canvas",
-                size: "10\" × 12\"",
-                orientation: "Portrait",
-                subject: "Monsoon Peak"
-            },
-            bhadrapada: {
-                title: "Bhadrapada",
-                description: "Late monsoon beauty with lush landscapes and gentle rain showers. This piece captures the serene beauty of the waning monsoon season, where the intensity gives way to gentle, nourishing rains. The artwork features soft tones and peaceful compositions that reflect tranquility and nature's gentle rhythms.",
-                price: "₹10,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/BHadrapad_nchz6o.jpg",
-                medium: "Acrylic on Canvas",
-                size: "10\" × 12\"",
-                orientation: "Portrait",
-                subject: "Late Monsoon"
-            },
-            ashwin: {
-                title: "Ashwin",
-                description: "Festive autumn month bringing celebrations and harvest abundance. This vibrant artwork captures the joy and energy of festival season with bright colors and celebratory motifs. The painting reflects the cultural richness of this month, combining natural beauty with festive spirit.",
-                price: "₹10,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Ashwin_g5ley6.jpg",
-                medium: "Acrylic on Canvas",
-                size: "10\" × 12\"",
-                orientation: "Portrait",
-                subject: "Autumn Festival"
-            },
-            karthik: {
-                title: "Karthik",
-                description: "Month of lights and lamps, celebrating joy and spiritual awakening. This luminous painting captures the essence of Diwali and the festival of lights with warm, glowing tones and symbolic imagery. The artwork evokes the triumph of light over darkness and the spiritual significance of this sacred month.",
-                price: "₹10,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963114/Karthik_uvb6ub.jpg",
-                medium: "Acrylic on Canvas",
-                size: "10\" × 12\"",
-                orientation: "Portrait",
-                subject: "Festival of Lights"
-            },
-            margashirsha: {
-                title: "Margashirsha",
-                description: "Pleasant winter begins with cool breezes and serene natural beauty. This painting captures the transition into winter with soft, cool tones and peaceful compositions. The artwork reflects the gentle beauty of early winter, when nature takes on a quieter, more contemplative character.",
-                price: "₹10,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963115/Margashirsha_cbewfi.jpg",
-                medium: "Acrylic on Canvas",
-                size: "10\" × 12\"",
-                orientation: "Portrait",
-                subject: "Early Winter"
-            },
-            pausha: {
-                title: "Pausha",
-                description: "Heart of winter brings crisp mornings and peaceful, misty landscapes. This atmospheric painting captures the essence of deep winter with soft, muted tones and ethereal qualities. The artwork evokes the quiet beauty and introspective nature of the coldest month.",
-                price: "₹10,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963115/Paush_fmtxty.jpg",
-                medium: "Acrylic on Canvas",
-                size: "10\" × 12\"",
-                orientation: "Portrait",
-                subject: "Deep Winter"
-            },
-            magh: {
-                title: "Magh",
-                description: "Sacred winter month of spiritual gatherings and holy celebrations. This meaningful painting combines the serene beauty of winter with spiritual symbolism. The artwork reflects the sacred nature of this month, featuring contemplative compositions and colors that evoke peace and devotion.",
-                price: "₹10,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963114/Magh_lkzd6o.jpg",
-                medium: "Acrylic on Canvas",
-                size: "10\" × 12\"",
-                orientation: "Portrait",
-                subject: "Sacred Winter"
-            },
-            falgun: {
-                title: "Falgun",
-                description: "Spring's arrival brings colorful festivities and nature's renewal. This joyful painting celebrates the festival of Holi and the return of spring with explosive colors and dynamic energy. The artwork captures the playful spirit of the season and the celebration of life's vibrancy.",
-                price: "₹10,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963112/Falgun_g6b5p3.jpg",
-                medium: "Acrylic on Canvas",
-                size: "10\" × 12\"",
-                orientation: "Portrait",
-                subject: "Spring Festival"
-            },
-            highway: {
-                title: "Highway Journey",
-                description: "Open road stretching toward distant mountains under a colorful sky. This evocative painting captures the spirit of adventure and the promise of new horizons. With sweeping perspectives and atmospheric depth, the artwork invites viewers to embark on their own journey of discovery.",
-                price: "₹5,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763315353/highway_d2e1k2.jpg",
-                medium: "Watercolor on Paper",
-                size: "A4 (8.3\" × 11.7\")",
-                orientation: "Landscape",
-                subject: "Travel & Adventure"
-            },
-            bowl_of_health: {
-                title: "Bowl of Health",
-                description: "Fresh fruits and vibrant colors celebrating nature's nutritious bounty. This delightful still life painting showcases the beauty of natural food with rich, appetizing colors and careful attention to texture and form. The artwork celebrates wellness, abundance, and the simple pleasures of healthy living.",
-                price: "₹5,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312918/bowl_of_heath_hke0f0.jpg",
-                medium: "Watercolor on Paper",
-                size: "A4 (8.3\" × 11.7\")",
-                orientation: "Portrait",
-                subject: "Still Life"
-            },
-            garden_chai_wala: {
-                title: "Garden Chai Wala",
-                description: "Traditional chai seller amid blooming garden flowers and greenery. This charming painting captures a slice of everyday Indian life, combining cultural tradition with natural beauty. The artwork celebrates the simple pleasure of tea time surrounded by nature's splendor.",
-                price: "₹5,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312727/garden_chai_wala_rvfpch.jpg",
-                medium: "Watercolor on Paper",
-                size: "A4 (8.3\" × 11.7\")",
-                orientation: "Portrait",
-                subject: "Cultural Life"
-            },
-            city_vibes: {
-                title: "City Vibes",
-                description: "Urban landscape with buildings and streets captured in vibrant colors. This dynamic painting brings the energy of city life to canvas with bold strokes and contemporary style. The artwork captures the rhythm, movement, and vitality of urban environments.",
-                price: "₹5,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312790/city_vibes_ixg0al.jpg",
-                medium: "Watercolor on Paper",
-                size: "A4 (8.3\" × 11.7\")",
-                orientation: "Landscape",
-                subject: "Urban Landscape"
-            },
-            the_bridge: {
-                title: "The Bridge",
-                description: "Rustic bridge over peaceful waters connecting nature's two sides. This serene painting captures the symbolic and physical beauty of bridges, representing connections, transitions, and the meeting of different worlds. The artwork evokes peace and contemplation.",
-                price: "₹5,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312823/bridge_sfixei.jpg",
-                medium: "Watercolor on Paper",
-                size: "A4 (8.3\" × 11.7\")",
-                orientation: "Landscape",
-                subject: "Architecture & Nature"
-            },
-            boat_journey: {
-                title: "Boat Journey",
-                description: "Serene boat sailing through calm waters under a tranquil sky. This peaceful painting captures the meditative quality of water travel, with soft reflections and gentle movements. The artwork invites viewers to slow down and find peace in simple journeys.",
-                price: "₹5,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312862/boat_journey_nlzaei.jpg",
-                medium: "Watercolor on Paper",
-                size: "A4 (8.3\" × 11.7\")",
-                orientation: "Landscape",
-                subject: "Waterscape"
-            },
-            just_u_n_me: {
-                title: "Just You & Me",
-                description: "Romantic moment captured with two figures in a beautiful setting. This intimate painting celebrates love and companionship with tender composition and emotional depth. The artwork captures the special connection between two souls sharing a precious moment.",
-                price: "₹5,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312694/just_u_n_me_dd55pi.jpg",
-                medium: "Watercolor on Paper",
-                size: "A4 (8.3\" × 11.7\")",
-                orientation: "Portrait",
-                subject: "Romance & Figures"
-            },
-            moon: {
-                title: "Moonlit Night",
-                description: "Glowing moon illuminating the night sky with soft, magical light. This enchanting painting captures the mystical beauty of moonlight with luminous tones and atmospheric depth. The artwork evokes wonder, dreams, and the serene beauty of nocturnal landscapes.",
-                price: "₹5,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763315426/moon_tlskhv.jpg",
-                medium: "Watercolor on Paper",
-                size: "A4 (8.3\" × 11.7\")",
-                orientation: "Portrait",
-                subject: "Night Sky"
-            },
-            the_land: {
-                title: "The Land",
-                description: "Expansive countryside landscape with rolling fields and open horizons. This sweeping painting captures the majesty of rural landscapes with broad vistas and rich earth tones. The artwork celebrates the beauty of agricultural lands and the connection between people and earth.",
-                price: "₹5,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312646/land_qal3or.jpg",
-                medium: "Watercolor on Paper",
-                size: "A4 (8.3\" × 11.7\")",
-                orientation: "Landscape",
-                subject: "Rural Landscape"
-            },
-            secret_garden: {
-                title: "Secret Garden",
-                description: "Hidden garden sanctuary filled with blooming flowers and lush plants. This magical painting invites viewers into a private paradise of natural beauty. With rich botanical details and vibrant colors, the artwork creates a sense of discovery and tranquility.",
-                price: "₹5,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312611/garden_of91eh.jpg",
-                medium: "Watercolor on Paper",
-                size: "A4 (8.3\" × 11.7\")",
-                orientation: "Portrait",
-                subject: "Garden & Florals"
-            },
-            summers_calling: {
-                title: "Summer's Calling",
-                description: "Bright summer day inviting you to enjoy nature's warmth and beauty. This radiant painting captures the irresistible allure of summer with brilliant sunshine, vibrant colors, and the feeling of endless possibilities. The artwork evokes joy, freedom, and the spirit of adventure.",
-                price: "₹5,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312442/summers_calling_eda0e8.jpg",
-                medium: "Watercolor on Paper",
-                size: "A4 (8.3\" × 11.7\")",
-                orientation: "Portrait",
-                subject: "Summer Nature"
-            },
-            to_build_a_home: {
-                title: "To Build a Home",
-                description: "Cozy house surrounded by nature, representing warmth and belonging. This heartwarming painting captures the essence of home as a sanctuary. With careful attention to architectural details and natural surroundings, the artwork evokes feelings of comfort, security, and the dream of creating one's own haven.",
-                price: "₹5,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312518/to_build_a_home_ragfcm.jpg",
-                medium: "Watercolor on Paper",
-                size: "A4 (8.3\" × 11.7\")",
-                orientation: "Landscape",
-                subject: "Architecture & Home"
-            },
-            the_night_we_met: {
-                title: "The Night We Met",
-                description: "Magical evening scene capturing a special moment under starlight. This romantic painting immortalizes the enchantment of meaningful encounters. With dreamy atmospherics and tender composition, the artwork celebrates those unforgettable moments that change our lives forever.",
-                price: "₹5,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312572/night_we_met_mi2vwm.jpg",
-                medium: "Watercolor on Paper",
-                size: "A4 (8.3\" × 11.7\")",
-                orientation: "Portrait",
-                subject: "Romantic Evening"
-            },
-            soulmates: {
-                title: "Soulmates",
-                description: "Two hearts intertwined in perfect harmony and eternal connection. This deeply emotional painting explores the concept of profound spiritual and emotional bonds. Through symbolic imagery and harmonious composition, the artwork celebrates the rare gift of finding one's perfect match.",
-                price: "₹5,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312365/soulmates_pupfct.jpg",
-                medium: "Watercolor on Paper",
-                size: "A4 (8.3\" × 11.7\")",
-                orientation: "Portrait",
-                subject: "Love & Connection"
-            },
-            sunflower_field: {
-                title: "Sunflower Field",
-                description: "Golden sunflowers swaying in the breeze under bright summer sun. This joyful painting captures the iconic beauty of sunflower fields in full bloom. With bold yellows and warm tones, the artwork radiates happiness, optimism, and the life-affirming energy of nature at its most glorious.",
-                price: "₹5,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312196/sunflower_field_iiftgb.jpg",
-                medium: "Watercolor on Paper",
-                size: "A4 (8.3\" × 11.7\")",
-                orientation: "Landscape",
-                subject: "Floral Landscape"
-            },
-            golden_sunset: {
-                title: "Golden Sunset",
-                description: "Warm golden hues painting the sky as day transitions to night. This breathtaking painting captures the magical moment when the sun descends, bathing everything in amber and gold. The artwork evokes peace, reflection, and the beauty of natural transitions.",
-                price: "₹5,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763313617/golden_sunset_1_2_odjxxs.jpg",
-                medium: "Watercolor on Paper",
-                size: "A4 (8.3\" × 11.7\")",
-                orientation: "Landscape",
-                subject: "Sunset Sky"
-            },
-            the_old_tree: {
-                title: "The Old Tree",
-                description: "Ancient tree standing tall, witness to countless seasons and stories. This powerful painting celebrates the majesty and endurance of old-growth trees. With textured bark and spreading branches, the artwork speaks to themes of strength, wisdom, memory, and the passage of time.",
-                price: "₹5,000",
-                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763313575/old_tree_1_xo1qir.jpg",
-                medium: "Watercolor on Paper",
-                size: "A4 (8.3\" × 11.7\")",
-                orientation: "Portrait",
-                subject: "Nature & Trees"
             }
+            // Add other paintings here with similar structure
         };
 
-        // Get painting ID from URL
+        // Quantity controls
+        let quantity = 1;
+        document.getElementById('decrease-qty').addEventListener('click', () => {
+            if (quantity > 1) {
+                quantity--;
+                document.getElementById('quantity').value = quantity;
+            }
+        });
+        document.getElementById('increase-qty').addEventListener('click', () => {
+            if (quantity < 10) {
+                quantity++;
+                document.getElementById('quantity').value = quantity;
+            }
+        });
+
+        // Image gallery navigation
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.thumbnail img');
+        const mainImage = document.getElementById('main-image');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+
+        thumbnails.forEach((thumb, index) => {
+            thumb.addEventListener('click', () => {
+                currentImageIndex = index;
+                updateMainImage();
+            });
+        });
+
+        document.querySelector('.nav-arrow.prev').addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            updateMainImage();
+        });
+
+        document.querySelector('.nav-arrow.next').addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            updateMainImage();
+        });
+
+        function updateMainImage() {
+            mainImage.src = images[currentImageIndex].src;
+            thumbnails.forEach(t => t.classList.remove('active'));
+            thumbnails[currentImageIndex].classList.add('active');
+        }
+
+        // Load painting data from URL
         const urlParams = new URLSearchParams(window.location.search);
         const paintingId = urlParams.get('id');
 
-        // Load painting data
         if (paintingId && paintings[paintingId]) {
             const painting = paintings[paintingId];
-            
-            document.getElementById('painting-title').textContent = painting.title;
+            document.getElementById('product-title').textContent = painting.title;
             document.getElementById('breadcrumb-title').textContent = painting.title;
-            document.getElementById('painting-description').textContent = painting.description;
-            document.getElementById('painting-price').textContent = painting.price;
-            document.getElementById('painting-image').src = painting.image;
-            document.getElementById('painting-image').alt = painting.title;
+            document.getElementById('full-description').textContent = painting.description;
+            document.getElementById('product-price').textContent = painting.price;
             document.getElementById('spec-medium').textContent = painting.medium;
             document.getElementById('spec-size').textContent = painting.size;
             document.getElementById('spec-orientation').textContent = painting.orientation;
             document.getElementById('spec-subject').textContent = painting.subject;
             
-            // Update page title
-            document.title = painting.title + ' - H Art Store';
+            // Update all images
+            mainImage.src = painting.image;
+            images.forEach(img => img.src = painting.image);
             
-            // Update email subject
-            const ctaButton = document.querySelector('.cta-button');
-            ctaButton.href = `mailto:hartstoreindia@gmail.com?subject=Interest in ${painting.title}&body=Hi, I am interested in learning more about the painting "${painting.title}".`;
-        } else {
-            // Redirect to originals page if painting not found
-            window.location.href = 'originals.html';
+            document.title = painting.title + ' - H Art Store';
         }
+
+        // Add to cart functionality
+        document.querySelector('.add-to-cart-btn').addEventListener('click', () => {
+            alert(`Added ${quantity} item(s) to cart! (This is a demo - integrate with your cart system)`);
+        });
     </script>
 </body>
 </html>
