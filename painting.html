@@ -124,10 +124,11 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            transition: transform 0.3s ease;
+            transition: transform 0.5s ease;
+            cursor: zoom-in;
         }
         .main-image:hover {
-            transform: scale(1.05);
+            transform: scale(2.5);
         }
         .nav-arrow {
             position: absolute;
@@ -225,9 +226,9 @@
             font-size: 1rem;
         }
         .add-to-cart-btn {
-            width: 100%;
+            flex: 1;
             padding: 1rem;
-            background: #2c2c2c;
+            background: #c9b5a0;
             color: white;
             border: none;
             border-radius: 4px;
@@ -237,7 +238,33 @@
             transition: all 0.3s ease;
         }
         .add-to-cart-btn:hover {
+            background: #b8a290;
+        }
+        .wishlist-btn {
+            width: 50px;
+            height: 50px;
+            padding: 0;
+            background: white;
+            color: #c9b5a0;
+            border: 2px solid #c9b5a0;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .wishlist-btn:hover {
             background: #c9b5a0;
+            color: white;
+        }
+        .wishlist-btn.active {
+            background: #c9b5a0;
+            color: white;
+        }
+        .wishlist-btn svg {
+            width: 24px;
+            height: 24px;
         }
         
         /* About Painting Section */
@@ -381,12 +408,32 @@
 
             <!-- Right Side - Product Info -->
             <div class="product-info">
-                <div class="brand-name">ROSEPAINTSTUDIO</div>
+                <div class="brand-name">COLOUREDEARTH</div>
                 <h1 class="product-title" id="product-title">CHAITRA</h1>
                 
                 <div class="price-section">
                     <div class="price" id="product-price">Rs. 10,000.00</div>
-                    <div class="tax-note">Tax included. <a href="#">Shipping</a> calculated at checkout.</div>
+                    <div class="tax-note">Original hand-painted acrylic on canvas artwork from the Hindu Calendar series</div>
+                </div>
+
+                <div class="specifications-box" style="margin: 1.5rem 0;">
+                    <h3>Specifications</h3>
+                    <div class="spec-item">
+                        <span class="spec-label">Medium</span>
+                        <span class="spec-value" id="spec-medium-top">Acrylic on Canvas</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Size</span>
+                        <span class="spec-value" id="spec-size-top">10" × 12"</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Orientation</span>
+                        <span class="spec-value" id="spec-orientation-top">Portrait</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Style</span>
+                        <span class="spec-value">Contemporary</span>
+                    </div>
                 </div>
 
                 <div class="quantity-section">
@@ -396,63 +443,39 @@
                         <input type="number" class="quantity-input" id="quantity" value="1" min="1" max="10" readonly>
                         <button class="quantity-btn" id="increase-qty">+</button>
                     </div>
-                    <button class="add-to-cart-btn">Add to cart</button>
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="add-to-cart-btn">Add to cart</button>
+                        <button class="wishlist-btn" title="Add to Wishlist">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- About Painting Section - Moved here -->
+                <div class="about-section-inline">
+                    <h3 style="color: #8b4789; font-size: 1.5rem; margin: 2rem 0 1rem 0;">About Painting</h3>
+                    <div class="about-description">
+                        <p id="full-description-inline">
+                            Spring blooms and new beginnings mark the first month of the Hindu calendar. This vibrant painting captures the essence of renewal and fresh starts with delicate floral motifs and warm spring colors.
+                        </p>
+                        
+                        <ul class="features-list" style="margin-top: 1.5rem;">
+                            <li>100% Original hand-painted artwork</li>
+                            <li>One-of-a-kind piece - no reproductions</li>
+                            <li>High-quality artist-grade materials</li>
+                            <li>Signed by the artist</li>
+                            <li>Ready to frame or hang</li>
+                            <li>Certificate of authenticity included</li>
+                            <li>Free shipping across India</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- About Painting Section -->
-        <div class="about-section">
-            <h2>About Painting</h2>
-            <div class="about-content">
-                <div class="about-description">
-                    <p id="full-description">
-                        Spring blooms and new beginnings mark the first month of the Hindu calendar. This vibrant painting captures the essence of renewal and fresh starts with delicate floral motifs and warm spring colors. The artwork celebrates the beauty of nature awakening after winter, featuring intricate details that represent growth, hope, and the cyclical nature of life.
-                    </p>
-                    <p style="margin-top: 1rem;">
-                        Each brushstroke tells a story of transformation and rebirth, making this piece perfect for those seeking to bring positive energy and natural beauty into their living spaces. The careful composition and harmonious color palette create a sense of peace and optimism.
-                    </p>
-                    
-                    <ul class="features-list">
-                        <li>100% Original hand-painted artwork</li>
-                        <li>One-of-a-kind piece - no reproductions</li>
-                        <li>High-quality artist-grade materials</li>
-                        <li>Signed by the artist</li>
-                        <li>Ready to frame or hang</li>
-                        <li>Certificate of authenticity included</li>
-                        <li>Free shipping across India</li>
-                    </ul>
-                </div>
-
-                <div class="specifications-box">
-                    <h3>Specifications</h3>
-                    <div class="spec-item">
-                        <span class="spec-label">Medium</span>
-                        <span class="spec-value" id="spec-medium">Acrylic on Canvas</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Size</span>
-                        <span class="spec-value" id="spec-size">10" × 12"</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Orientation</span>
-                        <span class="spec-value" id="spec-orientation">Portrait</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Style</span>
-                        <span class="spec-value">Contemporary</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Subject</span>
-                        <span class="spec-value" id="spec-subject">Seasonal Nature</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Year</span>
-                        <span class="spec-value">2024-2025</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Bottom specifications removed from here -->
     </div>
 
     <footer>
@@ -527,12 +550,11 @@
             const painting = paintings[paintingId];
             document.getElementById('product-title').textContent = painting.title;
             document.getElementById('breadcrumb-title').textContent = painting.title;
-            document.getElementById('full-description').textContent = painting.description;
+            document.getElementById('full-description-inline').textContent = painting.description;
             document.getElementById('product-price').textContent = painting.price;
-            document.getElementById('spec-medium').textContent = painting.medium;
-            document.getElementById('spec-size').textContent = painting.size;
-            document.getElementById('spec-orientation').textContent = painting.orientation;
-            document.getElementById('spec-subject').textContent = painting.subject;
+            document.getElementById('spec-medium-top').textContent = painting.medium;
+            document.getElementById('spec-size-top').textContent = painting.size;
+            document.getElementById('spec-orientation-top').textContent = painting.orientation;
             
             // Update all images
             mainImage.src = painting.image;
@@ -544,6 +566,20 @@
         // Add to cart functionality
         document.querySelector('.add-to-cart-btn').addEventListener('click', () => {
             alert(`Added ${quantity} item(s) to cart! (This is a demo - integrate with your cart system)`);
+        });
+
+        // Wishlist functionality
+        const wishlistBtn = document.querySelector('.wishlist-btn');
+        wishlistBtn.addEventListener('click', () => {
+            wishlistBtn.classList.toggle('active');
+            const isActive = wishlistBtn.classList.contains('active');
+            if (isActive) {
+                wishlistBtn.querySelector('svg').setAttribute('fill', 'currentColor');
+                alert('Added to wishlist!');
+            } else {
+                wishlistBtn.querySelector('svg').setAttribute('fill', 'none');
+                alert('Removed from wishlist!');
+            }
         });
     </script>
 </body>
