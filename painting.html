@@ -192,41 +192,39 @@
             color: #c9b5a0;
             text-decoration: underline;
         }
-        .quantity-section {
-            margin: 2rem 0;
+        .specifications-box {
+            background: #f8f6f4;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
         }
-        .quantity-label {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-        .quantity-controls {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .quantity-btn {
-            width: 35px;
-            height: 35px;
-            border: 1px solid #ddd;
-            background: white;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-        .quantity-btn:hover {
-            border-color: #c9b5a0;
+        .specifications-box h3 {
             color: #c9b5a0;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
         }
-        .quantity-input {
-            width: 60px;
-            height: 35px;
-            text-align: center;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.4rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+        .spec-label {
+            color: #666;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+        .spec-value {
+            color: #2c2c2c;
+            font-size: 0.8rem;
+        }
+        .add-cart-row {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
         }
         .add-to-cart-btn {
             flex: 1;
@@ -271,72 +269,20 @@
         }
         
         /* About Painting Section */
-        .about-section {
-            border-top: 3px solid #8b4789;
-            padding-top: 2rem;
+        .about-section-inline {
+            margin-top: 1rem;
         }
-        .about-section h2 {
-            font-size: 2rem;
+        .about-section-inline h3 {
             color: #8b4789;
-            margin-bottom: 2rem;
-        }
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
         }
         .about-description {
             line-height: 1.8;
             color: #555;
             font-size: 1.05rem;
         }
-        .specifications-box {
-            background: #f8f6f4;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-        }
-        .specifications-box h3 {
-            color: #c9b5a0;
-            font-size: 0.9rem;
-            margin-bottom: 0.8rem;
-        }
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.4rem 0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        .spec-item:last-child {
-            border-bottom: none;
-        }
-        .spec-label {
-            color: #666;
-            font-weight: 600;
-            font-size: 0.8rem;
-        }
-        .spec-value {
-            color: #2c2c2c;
-            font-size: 0.8rem;
-        }
-        .features-list {
-            margin-top: 2rem;
-            list-style: none;
-            padding: 0;
-        }
-        .features-list li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: #555;
-            font-size: 0.9rem;
-        }
-        .features-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #8b4789;
-            font-weight: bold;
-        }
+
         footer {
             background: #a89584;
             color: white;
@@ -346,7 +292,7 @@
         }
         
         @media (max-width: 768px) {
-            .product-layout, .about-content {
+            .product-layout {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
@@ -419,10 +365,10 @@
                 
                 <div class="price-section">
                     <div class="price" id="product-price">Rs. 10,000.00</div>
-                    <div class="tax-note">Original hand-painted acrylic on canvas artwork from the Hindu Calendar series</div>
+                    <div class="tax-note">Original hand-painted acrylic artwork from the Hindu Calendar series</div>
                 </div>
 
-                <div class="specifications-box" style="margin: 1.5rem 0;">
+                <div class="specifications-box">
                     <h3>Specifications</h3>
                     <div class="spec-item">
                         <span class="spec-label">Medium</span>
@@ -432,9 +378,13 @@
                         <span class="spec-label">Size</span>
                         <span class="spec-value" id="spec-size-top">10" × 12"</span>
                     </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Orientation</span>
+                        <span class="spec-value" id="spec-orientation-top">Portrait</span>
+                    </div>
                 </div>
 
-                <div style="display: flex; gap: 1rem; margin: 1.5rem 0;">
+                <div class="add-cart-row">
                     <button class="add-to-cart-btn">Add to cart</button>
                     <button class="wishlist-btn" title="Add to Wishlist">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -443,9 +393,9 @@
                     </button>
                 </div>
 
-                <!-- About Painting Section - Moved here -->
+                <!-- About Painting Section - Inline -->
                 <div class="about-section-inline">
-                    <h3 style="color: #8b4789; font-size: 1.5rem; margin: 2rem 0 1rem 0;">About Painting</h3>
+                    <h3>About Painting</h3>
                     <div class="about-description">
                         <p id="full-description-inline" class="brief-description">
                             Spring blooms and new beginnings mark the first month of the Hindu calendar. This vibrant painting captures the essence of renewal and fresh starts with delicate floral motifs and warm spring colors.
@@ -462,13 +412,13 @@
         <!-- Recommended Paintings Section -->
         <div class="recommended-section" style="margin-top: 4rem; padding-top: 3rem; border-top: 2px solid #e0e0e0;">
             <h2 style="text-align: center; color: #d4c3b2; font-size: 2rem; margin-bottom: 0.5rem;">You May Also Like</h2>
-            <p style="text-align: center; color: #666; font-size: 1rem; margin-bottom: 2rem;">Explore more paintings from our Hindu Calendar collection</p>
+            <p id="recommended-subtitle" style="text-align: center; color: #666; font-size: 1rem; margin-bottom: 2rem;">
+                Explore more paintings from our Hindu Calendar collection
+            </p>
             <div class="product-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto;">
                 <!-- Recommended paintings will be loaded here dynamically -->
             </div>
         </div>
-
-        <!-- Bottom specifications removed from here -->
     </div>
 
     <footer>
@@ -478,11 +428,12 @@
     <script>
         // Painting data
         const paintings = {
+            /* === HINDU CALENDAR SERIES === */
             chaitra: {
                 title: "CHAITRA",
                 displayTitle: "CHAITRA | HINDU CALENDAR",
-                description: "Spring blooms and new beginnings mark the first month of the Hindu calendar. This vibrant painting captures the essence of renewal and fresh starts with delicate floral motifs and warm spring colors. The artwork celebrates the beauty of nature awakening after winter, featuring intricate details that represent growth, hope, and the cyclical nature of life. Each brushstroke tells a story of transformation and rebirth, making this piece perfect for those seeking to bring positive energy and natural beauty into their living spaces.",
-                briefDescription: "Spring blooms and new beginnings mark the first month of the Hindu calendar. This vibrant painting captures the essence of renewal and fresh starts with delicate floral motifs and warm spring colors.",
+                description: "Spring blooms and new beginnings mark the first month of the Hindu calendar. This vibrant painting captures the essence of renewal and fresh starts with delicate floral motifs and warm spring colors.",
+                briefDescription: "Spring blooms and new beginnings mark the first month of the Hindu calendar. This vibrant painting captures the essence of renewal and fresh starts.",
                 price: "Rs. 10,000.00",
                 image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Chaitra_wavylr.jpg",
                 medium: "Acrylic on Canvas",
@@ -645,14 +596,252 @@
                 subject: "Spring Festival",
                 category: "hindu-calendar",
                 series: "Hindu Calendar"
+            },
+
+            /* === A4 PAPER PAINTINGS === */
+            highway: {
+                title: "HIGHWAY JOURNEY",
+                displayTitle: "HIGHWAY JOURNEY | A4 ORIGINAL",
+                description: "Open road stretching toward distant mountains under a colorful sky.",
+                briefDescription: "Open road stretching toward distant mountains under a colorful sky.",
+                price: "Rs. 5,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763315353/highway_d2e1k2.jpg",
+                medium: "Acrylic on Paper",
+                size: "A4",
+                orientation: "Landscape",
+                subject: "Road & Mountains",
+                category: "a4",
+                series: "A4 Originals"
+            },
+            bowl_of_health: {
+                title: "BOWL OF HEALTH",
+                displayTitle: "BOWL OF HEALTH | A4 ORIGINAL",
+                description: "Fresh fruits and vibrant colors celebrating nature's nutritious bounty.",
+                briefDescription: "Fresh fruits and vibrant colors celebrating nature's nutritious bounty.",
+                price: "Rs. 5,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312918/bowl_of_heath_hke0f0.jpg",
+                medium: "Acrylic on Paper",
+                size: "A4",
+                orientation: "Portrait",
+                subject: "Still Life",
+                category: "a4",
+                series: "A4 Originals"
+            },
+            garden_chai_wala: {
+                title: "GARDEN CHAI WALA",
+                displayTitle: "GARDEN CHAI WALA | A4 ORIGINAL",
+                description: "Traditional chai seller amid blooming garden flowers and greenery.",
+                briefDescription: "Traditional chai seller amid blooming garden flowers and greenery.",
+                price: "Rs. 5,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312727/garden_chai_wala_rvfpch.jpg",
+                medium: "Acrylic on Paper",
+                size: "A4",
+                orientation: "Portrait",
+                subject: "Everyday Life",
+                category: "a4",
+                series: "A4 Originals"
+            },
+            city_vibes: {
+                title: "CITY VIBES",
+                displayTitle: "CITY VIBES | A4 ORIGINAL",
+                description: "Urban landscape with buildings and streets captured in vibrant colors.",
+                briefDescription: "Urban landscape with buildings and streets captured in vibrant colors.",
+                price: "Rs. 5,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312790/city_vibes_ixg0al.jpg",
+                medium: "Acrylic on Paper",
+                size: "A4",
+                orientation: "Portrait",
+                subject: "Cityscape",
+                category: "a4",
+                series: "A4 Originals"
+            },
+            the_bridge: {
+                title: "THE BRIDGE",
+                displayTitle: "THE BRIDGE | A4 ORIGINAL",
+                description: "Rustic bridge over peaceful waters connecting nature's two sides.",
+                briefDescription: "Rustic bridge over peaceful waters connecting nature's two sides.",
+                price: "Rs. 5,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312823/bridge_sfixei.jpg",
+                medium: "Acrylic on Paper",
+                size: "A4",
+                orientation: "Landscape",
+                subject: "Landscape",
+                category: "a4",
+                series: "A4 Originals"
+            },
+            boat_journey: {
+                title: "BOAT JOURNEY",
+                displayTitle: "BOAT JOURNEY | A4 ORIGINAL",
+                description: "Serene boat sailing through calm waters under a tranquil sky.",
+                briefDescription: "Serene boat sailing through calm waters under a tranquil sky.",
+                price: "Rs. 5,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312862/boat_journey_nlzaei.jpg",
+                medium: "Acrylic on Paper",
+                size: "A4",
+                orientation: "Landscape",
+                subject: "Boat & Water",
+                category: "a4",
+                series: "A4 Originals"
+            },
+            just_u_n_me: {
+                title: "JUST YOU & ME",
+                displayTitle: "JUST YOU & ME | A4 ORIGINAL",
+                description: "Romantic moment captured with two figures in a beautiful setting.",
+                briefDescription: "Romantic moment captured with two figures in a beautiful setting.",
+                price: "Rs. 5,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312694/just_u_n_me_dd55pi.jpg",
+                medium: "Acrylic on Paper",
+                size: "A4",
+                orientation: "Portrait",
+                subject: "Romance",
+                category: "a4",
+                series: "A4 Originals"
+            },
+            moon: {
+                title: "MOONLIT NIGHT",
+                displayTitle: "MOONLIT NIGHT | A4 ORIGINAL",
+                description: "Glowing moon illuminating the night sky with soft, magical light.",
+                briefDescription: "Glowing moon illuminating the night sky with soft, magical light.",
+                price: "Rs. 5,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763315426/moon_tlskhv.jpg",
+                medium: "Acrylic on Paper",
+                size: "A4",
+                orientation: "Portrait",
+                subject: "Night Sky",
+                category: "a4",
+                series: "A4 Originals"
+            },
+            the_land: {
+                title: "THE LAND",
+                displayTitle: "THE LAND | A4 ORIGINAL",
+                description: "Expansive countryside landscape with rolling fields and open horizons.",
+                briefDescription: "Expansive countryside landscape with rolling fields and open horizons.",
+                price: "Rs. 5,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312646/land_qal3or.jpg",
+                medium: "Acrylic on Paper",
+                size: "A4",
+                orientation: "Landscape",
+                subject: "Countryside",
+                category: "a4",
+                series: "A4 Originals"
+            },
+            secret_garden: {
+                title: "SECRET GARDEN",
+                displayTitle: "SECRET GARDEN | A4 ORIGINAL",
+                description: "Hidden garden sanctuary filled with blooming flowers and lush plants.",
+                briefDescription: "Hidden garden sanctuary filled with blooming flowers and lush plants.",
+                price: "Rs. 5,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312611/garden_of91eh.jpg",
+                medium: "Acrylic on Paper",
+                size: "A4",
+                orientation: "Portrait",
+                subject: "Garden",
+                category: "a4",
+                series: "A4 Originals"
+            },
+            summers_calling: {
+                title: "SUMMER'S CALLING",
+                displayTitle: "SUMMER'S CALLING | A4 ORIGINAL",
+                description: "Bright summer day inviting you to enjoy nature's warmth and beauty.",
+                briefDescription: "Bright summer day inviting you to enjoy nature's warmth and beauty.",
+                price: "Rs. 5,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312442/summers_calling_eda0e8.jpg",
+                medium: "Acrylic on Paper",
+                size: "A4",
+                orientation: "Landscape",
+                subject: "Summer Landscape",
+                category: "a4",
+                series: "A4 Originals"
+            },
+            to_build_a_home: {
+                title: "TO BUILD A HOME",
+                displayTitle: "TO BUILD A HOME | A4 ORIGINAL",
+                description: "Cozy house surrounded by nature, representing warmth and belonging.",
+                briefDescription: "Cozy house surrounded by nature, representing warmth and belonging.",
+                price: "Rs. 5,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312518/to_build_a_home_ragfcm.jpg",
+                medium: "Acrylic on Paper",
+                size: "A4",
+                orientation: "Landscape",
+                subject: "Home & Nature",
+                category: "a4",
+                series: "A4 Originals"
+            },
+            the_night_we_met: {
+                title: "THE NIGHT WE MET",
+                displayTitle: "THE NIGHT WE MET | A4 ORIGINAL",
+                description: "Magical evening scene capturing a special moment under starlight.",
+                briefDescription: "Magical evening scene capturing a special moment under starlight.",
+                price: "Rs. 5,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312572/night_we_met_mi2vwm.jpg",
+                medium: "Acrylic on Paper",
+                size: "A4",
+                orientation: "Landscape",
+                subject: "Evening Romance",
+                category: "a4",
+                series: "A4 Originals"
+            },
+            soulmates: {
+                title: "SOULMATES",
+                displayTitle: "SOULMATES | A4 ORIGINAL",
+                description: "Two hearts intertwined in perfect harmony and eternal connection.",
+                briefDescription: "Two hearts intertwined in perfect harmony and eternal connection.",
+                price: "Rs. 5,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312365/soulmates_pupfct.jpg",
+                medium: "Acrylic on Paper",
+                size: "A4",
+                orientation: "Portrait",
+                subject: "Love",
+                category: "a4",
+                series: "A4 Originals"
+            },
+            sunflower_field: {
+                title: "SUNFLOWER FIELD",
+                displayTitle: "SUNFLOWER FIELD | A4 ORIGINAL",
+                description: "Golden sunflowers swaying in the breeze under bright summer sun.",
+                briefDescription: "Golden sunflowers swaying in the breeze under bright summer sun.",
+                price: "Rs. 5,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312196/sunflower_field_iiftgb.jpg",
+                medium: "Acrylic on Paper",
+                size: "A4",
+                orientation: "Landscape",
+                subject: "Flowers",
+                category: "a4",
+                series: "A4 Originals"
+            },
+            golden_sunset: {
+                title: "GOLDEN SUNSET",
+                displayTitle: "GOLDEN SUNSET | A4 ORIGINAL",
+                description: "Warm golden hues painting the sky as day transitions to night.",
+                briefDescription: "Warm golden hues painting the sky as day transitions to night.",
+                price: "Rs. 5,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763313617/golden_sunset_1_2_odjxxs.jpg",
+                medium: "Acrylic on Paper",
+                size: "A4",
+                orientation: "Landscape",
+                subject: "Sunset",
+                category: "a4",
+                series: "A4 Originals"
+            },
+            the_old_tree: {
+                title: "THE OLD TREE",
+                displayTitle: "THE OLD TREE | A4 ORIGINAL",
+                description: "Ancient tree standing tall, witness to countless seasons and stories.",
+                briefDescription: "Ancient tree standing tall, witness to countless seasons and stories.",
+                price: "Rs. 5,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763313575/old_tree_1_xo1qir.jpg",
+                medium: "Acrylic on Paper",
+                size: "A4",
+                orientation: "Portrait",
+                subject: "Tree",
+                category: "a4",
+                series: "A4 Originals"
             }
         };
 
         // Cart and wishlist storage
         let cart = JSON.parse(localStorage.getItem('cart') || '[]');
         let wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
-
-        // Quantity removed - always add 1 item
 
         // Image gallery with zoom on hover
         let currentImageIndex = 0;
@@ -707,22 +896,22 @@
 
         if (paintingId && paintings[paintingId]) {
             const painting = paintings[paintingId];
-            document.getElementById('product-title').textContent = painting.title;
+            document.getElementById('product-title').textContent = painting.displayTitle || painting.title;
             document.getElementById('breadcrumb-title').textContent = painting.title;
             document.querySelector('.brief-description').textContent = painting.briefDescription;
             document.querySelector('.full-description-text').textContent = painting.description;
             document.getElementById('product-price').textContent = painting.price;
             document.getElementById('spec-medium-top').textContent = painting.medium;
             document.getElementById('spec-size-top').textContent = painting.size;
-            document.getElementById('spec-orientation-top').textContent = painting.orientation;
-            
-            // Update all images
+            document.getElementById('spec-orientation-top').textContent = painting.orientation || '';
+
+            // Update all images (same image in all thumbnails for now)
             mainImage.src = painting.image;
             images.forEach(img => img.src = painting.image);
             
             document.title = painting.title + ' - H Art Store';
 
-            // Load recommended paintings (similar category, exclude current)
+            // Load recommended paintings (same category, excluding current)
             loadRecommendedPaintings(paintingId, painting.category);
         }
 
@@ -748,7 +937,6 @@
             if (paintingId && paintings[paintingId]) {
                 const painting = paintings[paintingId];
                 
-                // Add to cart
                 const cartItem = {
                     id: paintingId,
                     title: painting.title,
@@ -807,33 +995,36 @@
             localStorage.setItem('wishlist', JSON.stringify(wishlist));
         });
 
-        // Load recommended paintings
+        // Load recommended paintings - 3 RANDOM from same category
         function loadRecommendedPaintings(currentId, category) {
-            console.log('Loading recommendations for:', currentId, 'Category:', category);
-            console.log('All paintings:', Object.keys(paintings));
-            
-            const recommended = Object.entries(paintings)
-                .filter(([id, painting]) => {
-                    const matches = id !== currentId && painting.category === category;
-                    console.log(`Checking ${id}: current=${currentId}, category match=${painting.category === category}, include=${matches}`);
-                    return matches;
-                })
-                .slice(0, 3);
-            
-            console.log('Recommended paintings:', recommended.length);
-            
             const grid = document.querySelector('.recommended-section .product-grid');
             const section = document.querySelector('.recommended-section');
-            
-            if (recommended.length === 0) {
-                console.log('No recommendations found, hiding section');
+            const subtitle = document.getElementById('recommended-subtitle');
+
+            if (subtitle) {
+                if (category === 'hindu-calendar') {
+                    subtitle.textContent = 'Explore more paintings from our Hindu Calendar collection';
+                } else {
+                    subtitle.textContent = 'Explore more original A4 paintings from this collection';
+                }
+            }
+
+            // All paintings from same category, excluding current
+            let pool = Object.entries(paintings)
+                .filter(([id, painting]) => id !== currentId && painting.category === category);
+
+            if (pool.length === 0) {
                 section.style.display = 'none';
                 return;
             }
-            
+
+            // Shuffle and pick 3 random
+            pool.sort(() => Math.random() - 0.5);
+            const recommended = pool.slice(0, 3);
+
             section.style.display = 'block';
             grid.innerHTML = '';
-            
+
             recommended.forEach(([id, painting]) => {
                 const card = `
                     <a href="painting.html?id=${id}" style="text-decoration: none; color: inherit;">
