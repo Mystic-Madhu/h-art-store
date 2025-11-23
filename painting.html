@@ -119,16 +119,13 @@
             overflow: hidden;
             background: #f5f5f5;
             position: relative;
+            cursor: crosshair;
         }
         .main-image {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            transition: transform 0.5s ease;
-            cursor: zoom-in;
-        }
-        .main-image:hover {
-            transform: scale(2.5);
+            transition: none;
         }
         .nav-arrow {
             position: absolute;
@@ -294,13 +291,13 @@
         }
         .specifications-box h3 {
             color: #c9b5a0;
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            margin-bottom: 1rem;
         }
         .spec-item {
             display: flex;
             justify-content: space-between;
-            padding: 0.8rem 0;
+            padding: 0.5rem 0;
             border-bottom: 1px solid #e0e0e0;
         }
         .spec-item:last-child {
@@ -309,9 +306,11 @@
         .spec-label {
             color: #666;
             font-weight: 600;
+            font-size: 0.85rem;
         }
         .spec-value {
             color: #2c2c2c;
+            font-size: 0.85rem;
         }
         .features-list {
             margin-top: 2rem;
@@ -319,10 +318,11 @@
             padding: 0;
         }
         .features-list li {
-            padding: 0.6rem 0;
+            padding: 0.5rem 0;
             padding-left: 1.5rem;
             position: relative;
             color: #555;
+            font-size: 0.9rem;
         }
         .features-list li:before {
             content: "✓";
@@ -416,15 +416,6 @@
                     <div class="tax-note">Original hand-painted acrylic on canvas artwork from the Hindu Calendar series</div>
                 </div>
 
-                <div style="display: flex; gap: 1rem; margin: 1.5rem 0;">
-                    <button class="add-to-cart-btn">Add to cart</button>
-                    <button class="wishlist-btn" title="Add to Wishlist">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                        </svg>
-                    </button>
-                </div>
-
                 <div class="specifications-box" style="margin: 1.5rem 0;">
                     <h3>Specifications</h3>
                     <div class="spec-item">
@@ -435,35 +426,48 @@
                         <span class="spec-label">Size</span>
                         <span class="spec-value" id="spec-size-top">10" × 12"</span>
                     </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Orientation</span>
-                        <span class="spec-value" id="spec-orientation-top">Portrait</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Style</span>
-                        <span class="spec-value">Contemporary</span>
-                    </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; margin: 1.5rem 0;">
+                    <button class="add-to-cart-btn">Add to cart</button>
+                    <button class="wishlist-btn" title="Add to Wishlist">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
                 </div>
 
                 <!-- About Painting Section - Moved here -->
                 <div class="about-section-inline">
                     <h3 style="color: #8b4789; font-size: 1.5rem; margin: 2rem 0 1rem 0;">About Painting</h3>
                     <div class="about-description">
-                        <p id="full-description-inline">
+                        <p id="full-description-inline" class="brief-description">
                             Spring blooms and new beginnings mark the first month of the Hindu calendar. This vibrant painting captures the essence of renewal and fresh starts with delicate floral motifs and warm spring colors.
                         </p>
+                        <p class="full-description-text" style="display: none;">
+                            Spring blooms and new beginnings mark the first month of the Hindu calendar. This vibrant painting captures the essence of renewal and fresh starts with delicate floral motifs and warm spring colors. The artwork celebrates the beauty of nature awakening after winter, featuring intricate details that represent growth, hope, and the cyclical nature of life. Each brushstroke tells a story of transformation and rebirth, making this piece perfect for those seeking to bring positive energy and natural beauty into their living spaces.
+                        </p>
+                        <button id="read-more-btn" style="background: none; border: none; color: #c9b5a0; cursor: pointer; text-decoration: underline; padding: 0; margin-top: 0.5rem; font-size: 0.95rem;">Read more</button>
                         
                         <ul class="features-list" style="margin-top: 1.5rem;">
                             <li>100% Original hand-painted artwork</li>
                             <li>One-of-a-kind piece - no reproductions</li>
                             <li>High-quality artist-grade materials</li>
                             <li>Signed by the artist</li>
-                            <li>Ready to frame or hang</li>
                             <li>Certificate of authenticity included</li>
                             <li>Free shipping across India</li>
                         </ul>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Recommended Paintings Section -->
+        <div class="recommended-section" style="margin-top: 4rem; padding-top: 3rem; border-top: 2px solid #e0e0e0;">
+            <h2 style="text-align: center; color: #d4c3b2; font-size: 2rem; margin-bottom: 0.5rem;">You May Also Like</h2>
+            <p style="text-align: center; color: #666; font-size: 1rem; margin-bottom: 2rem;">Explore more paintings from our Hindu Calendar collection</p>
+            <div class="product-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+                <!-- Recommended paintings will be loaded here dynamically -->
             </div>
         </div>
 
@@ -479,37 +483,80 @@
         const paintings = {
             chaitra: {
                 title: "CHAITRA",
-                description: "Spring blooms and new beginnings mark the first month of the Hindu calendar. This vibrant painting captures the essence of renewal and fresh starts with delicate floral motifs and warm spring colors. The artwork celebrates the beauty of nature awakening after winter, featuring intricate details that represent growth, hope, and the cyclical nature of life.",
+                description: "Spring blooms and new beginnings mark the first month of the Hindu calendar. This vibrant painting captures the essence of renewal and fresh starts with delicate floral motifs and warm spring colors. The artwork celebrates the beauty of nature awakening after winter, featuring intricate details that represent growth, hope, and the cyclical nature of life. Each brushstroke tells a story of transformation and rebirth, making this piece perfect for those seeking to bring positive energy and natural beauty into their living spaces.",
+                briefDescription: "Spring blooms and new beginnings mark the first month of the Hindu calendar. This vibrant painting captures the essence of renewal and fresh starts...",
                 price: "Rs. 10,000.00",
                 image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Chaitra_wavylr.jpg",
                 medium: "Acrylic on Canvas",
                 size: "10\" × 12\"",
                 orientation: "Portrait",
-                subject: "Seasonal Nature"
+                subject: "Seasonal Nature",
+                category: "hindu-calendar"
+            },
+            vaishakh: {
+                title: "VAISHAKH",
+                description: "Vibrant flowers and warm sunshine celebrate the beauty of summer's arrival.",
+                briefDescription: "Vibrant flowers and warm sunshine celebrate the beauty of summer's arrival.",
+                price: "Rs. 10,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763295097/Vaishakh_z0qa1m.jpg",
+                medium: "Acrylic on Canvas",
+                size: "10\" × 12\"",
+                orientation: "Portrait",
+                subject: "Summer Florals",
+                category: "hindu-calendar"
+            },
+            jyeshtha: {
+                title: "JYESHTHA",
+                description: "The peak of summer brings golden warmth and abundant nature's bounty.",
+                briefDescription: "The peak of summer brings golden warmth and abundant nature's bounty.",
+                price: "Rs. 10,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Jyeshtha_qrweyz.jpg",
+                medium: "Acrylic on Canvas",
+                size: "10\" × 12\"",
+                orientation: "Portrait",
+                subject: "Summer Abundance",
+                category: "hindu-calendar"
+            },
+            ashadh: {
+                title: "ASHADH",
+                description: "Monsoon clouds gather, bringing life-giving rains and lush greenery to the land.",
+                briefDescription: "Monsoon clouds gather, bringing life-giving rains and lush greenery to the land.",
+                price: "Rs. 10,000.00",
+                image: "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Ashadh_ovvtnu.jpg",
+                medium: "Acrylic on Canvas",
+                size: "10\" × 12\"",
+                orientation: "Portrait",
+                subject: "Monsoon Beginning",
+                category: "hindu-calendar"
             }
-            // Add other paintings here with similar structure
         };
 
-        // Quantity controls
-        let quantity = 1;
-        document.getElementById('decrease-qty').addEventListener('click', () => {
-            if (quantity > 1) {
-                quantity--;
-                document.getElementById('quantity').value = quantity;
-            }
-        });
-        document.getElementById('increase-qty').addEventListener('click', () => {
-            if (quantity < 10) {
-                quantity++;
-                document.getElementById('quantity').value = quantity;
-            }
-        });
+        // Cart and wishlist storage
+        let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        let wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
 
-        // Image gallery navigation
+        // Quantity removed - always add 1 item
+
+        // Image gallery with zoom on hover
         let currentImageIndex = 0;
         const images = document.querySelectorAll('.thumbnail img');
         const mainImage = document.getElementById('main-image');
+        const mainImageBox = document.querySelector('.main-image-box');
         const thumbnails = document.querySelectorAll('.thumbnail');
+
+        // Zoom functionality on mouse move
+        mainImageBox.addEventListener('mousemove', (e) => {
+            const rect = mainImageBox.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            mainImage.style.transformOrigin = `${x}% ${y}%`;
+            mainImage.style.transform = 'scale(2.5)';
+        });
+
+        mainImageBox.addEventListener('mouseleave', () => {
+            mainImage.style.transform = 'scale(1)';
+            mainImage.style.transformOrigin = 'center center';
+        });
 
         thumbnails.forEach((thumb, index) => {
             thumb.addEventListener('click', () => {
@@ -542,7 +589,8 @@
             const painting = paintings[paintingId];
             document.getElementById('product-title').textContent = painting.title;
             document.getElementById('breadcrumb-title').textContent = painting.title;
-            document.getElementById('full-description-inline').textContent = painting.description;
+            document.querySelector('.brief-description').textContent = painting.briefDescription;
+            document.querySelector('.full-description-text').textContent = painting.description;
             document.getElementById('product-price').textContent = painting.price;
             document.getElementById('spec-medium-top').textContent = painting.medium;
             document.getElementById('spec-size-top').textContent = painting.size;
@@ -553,26 +601,119 @@
             images.forEach(img => img.src = painting.image);
             
             document.title = painting.title + ' - H Art Store';
+
+            // Load recommended paintings (similar category, exclude current)
+            loadRecommendedPaintings(paintingId, painting.category);
         }
+
+        // Read more functionality
+        document.getElementById('read-more-btn').addEventListener('click', function() {
+            const briefDesc = document.querySelector('.brief-description');
+            const fullDesc = document.querySelector('.full-description-text');
+            const btn = this;
+            
+            if (fullDesc.style.display === 'none') {
+                briefDesc.style.display = 'none';
+                fullDesc.style.display = 'block';
+                btn.textContent = 'Read less';
+            } else {
+                briefDesc.style.display = 'block';
+                fullDesc.style.display = 'none';
+                btn.textContent = 'Read more';
+            }
+        });
 
         // Add to cart functionality
         document.querySelector('.add-to-cart-btn').addEventListener('click', () => {
-            alert(`Added ${quantity} item(s) to cart! (This is a demo - integrate with your cart system)`);
+            if (paintingId && paintings[paintingId]) {
+                const painting = paintings[paintingId];
+                
+                // Add to cart
+                const cartItem = {
+                    id: paintingId,
+                    title: painting.title,
+                    price: painting.price,
+                    image: painting.image,
+                    quantity: 1
+                };
+                
+                const existingIndex = cart.findIndex(item => item.id === paintingId);
+                if (existingIndex >= 0) {
+                    cart[existingIndex].quantity += 1;
+                } else {
+                    cart.push(cartItem);
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                
+                // Also add to wishlist
+                if (!wishlist.includes(paintingId)) {
+                    wishlist.push(paintingId);
+                    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                    document.querySelector('.wishlist-btn').classList.add('active');
+                    document.querySelector('.wishlist-btn svg').setAttribute('fill', 'currentColor');
+                }
+                
+                alert('Added to cart and wishlist! ✓');
+            }
         });
 
         // Wishlist functionality
         const wishlistBtn = document.querySelector('.wishlist-btn');
+        
+        // Check if already in wishlist
+        if (paintingId && wishlist.includes(paintingId)) {
+            wishlistBtn.classList.add('active');
+            wishlistBtn.querySelector('svg').setAttribute('fill', 'currentColor');
+        }
+        
         wishlistBtn.addEventListener('click', () => {
+            if (!paintingId) return;
+            
             wishlistBtn.classList.toggle('active');
             const isActive = wishlistBtn.classList.contains('active');
+            
             if (isActive) {
+                if (!wishlist.includes(paintingId)) {
+                    wishlist.push(paintingId);
+                }
                 wishlistBtn.querySelector('svg').setAttribute('fill', 'currentColor');
-                alert('Added to wishlist!');
+                alert('Added to wishlist! ♥');
             } else {
+                wishlist = wishlist.filter(id => id !== paintingId);
                 wishlistBtn.querySelector('svg').setAttribute('fill', 'none');
                 alert('Removed from wishlist!');
             }
+            
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
         });
+
+        // Load recommended paintings
+        function loadRecommendedPaintings(currentId, category) {
+            const recommended = Object.entries(paintings)
+                .filter(([id, painting]) => id !== currentId && painting.category === category)
+                .slice(0, 4);
+            
+            const grid = document.querySelector('.recommended-section .product-grid');
+            grid.innerHTML = '';
+            
+            recommended.forEach(([id, painting]) => {
+                const card = `
+                    <a href="painting.html?id=${id}" style="text-decoration: none; color: inherit;">
+                        <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                            <div style="height: 200px; overflow: hidden;">
+                                <img src="${painting.image}" alt="${painting.title}" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div style="padding: 1.5rem;">
+                                <h3 style="color: #d4c3b2; font-size: 1.3rem; margin-bottom: 0.5rem;">${painting.title}</h3>
+                                <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">${painting.briefDescription}</p>
+                                <p style="color: #c9b5a0; font-weight: bold; font-size: 1.2rem;">${painting.price}</p>
+                            </div>
+                        </div>
+                    </a>
+                `;
+                grid.innerHTML += card;
+            });
+        }
     </script>
 </body>
 </html>
