@@ -120,11 +120,15 @@
             background: #f5f5f5;
             position: relative;
             cursor: crosshair;
+            padding: 0.5cm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .main-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
             transition: none;
         }
         .nav-arrow {
@@ -458,7 +462,7 @@
         <div class="recommended-section" style="margin-top: 4rem; padding-top: 3rem; border-top: 2px solid #e0e0e0;">
             <h2 style="text-align: center; color: #d4c3b2; font-size: 2rem; margin-bottom: 0.5rem;">You May Also Like</h2>
             <p style="text-align: center; color: #666; font-size: 1rem; margin-bottom: 2rem;">Explore more paintings from our Hindu Calendar collection</p>
-            <div class="product-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+            <div class="product-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto;">
                 <!-- Recommended paintings will be loaded here dynamically -->
             </div>
         </div>
@@ -489,6 +493,7 @@
             },
             vaishakh: {
                 title: "VAISHAKH",
+                displayTitle: "VAISHAKH | HINDU CALENDAR",
                 description: "Vibrant flowers and warm sunshine celebrate the beauty of summer's arrival.",
                 briefDescription: "Vibrant flowers and warm sunshine celebrate the beauty of summer's arrival.",
                 price: "Rs. 10,000.00",
@@ -502,6 +507,7 @@
             },
             jyeshtha: {
                 title: "JYESHTHA",
+                displayTitle: "JYESHTHA | HINDU CALENDAR",
                 description: "The peak of summer brings golden warmth and abundant nature's bounty.",
                 briefDescription: "The peak of summer brings golden warmth and abundant nature's bounty.",
                 price: "Rs. 10,000.00",
@@ -515,6 +521,7 @@
             },
             ashadh: {
                 title: "ASHADH",
+                displayTitle: "ASHADH | HINDU CALENDAR",
                 description: "Monsoon clouds gather, bringing life-giving rains and lush greenery to the land.",
                 briefDescription: "Monsoon clouds gather, bringing life-giving rains and lush greenery to the land.",
                 price: "Rs. 10,000.00",
@@ -528,6 +535,7 @@
             },
             shrawan: {
                 title: "SHRAWAN",
+                displayTitle: "SHRAWAN | HINDU CALENDAR",
                 description: "Sacred month of monsoon, when nature is at its most vibrant and fresh.",
                 briefDescription: "Sacred month of monsoon, when nature is at its most vibrant and fresh.",
                 price: "Rs. 10,000.00",
@@ -541,6 +549,7 @@
             },
             bhadrapada: {
                 title: "BHADRAPADA",
+                displayTitle: "BHADRAPADA | HINDU CALENDAR",
                 description: "Late monsoon beauty with lush landscapes and gentle rain showers.",
                 briefDescription: "Late monsoon beauty with lush landscapes and gentle rain showers.",
                 price: "Rs. 10,000.00",
@@ -554,6 +563,7 @@
             },
             ashwin: {
                 title: "ASHWIN",
+                displayTitle: "ASHWIN | HINDU CALENDAR",
                 description: "Festive autumn month bringing celebrations and harvest abundance.",
                 briefDescription: "Festive autumn month bringing celebrations and harvest abundance.",
                 price: "Rs. 10,000.00",
@@ -567,6 +577,7 @@
             },
             karthik: {
                 title: "KARTHIK",
+                displayTitle: "KARTHIK | HINDU CALENDAR",
                 description: "Month of lights and lamps, celebrating joy and spiritual awakening.",
                 briefDescription: "Month of lights and lamps, celebrating joy and spiritual awakening.",
                 price: "Rs. 10,000.00",
@@ -580,6 +591,7 @@
             },
             margashirsha: {
                 title: "MARGASHIRSHA",
+                displayTitle: "MARGASHIRSHA | HINDU CALENDAR",
                 description: "Pleasant winter begins with cool breezes and serene natural beauty.",
                 briefDescription: "Pleasant winter begins with cool breezes and serene natural beauty.",
                 price: "Rs. 10,000.00",
@@ -593,6 +605,7 @@
             },
             pausha: {
                 title: "PAUSHA",
+                displayTitle: "PAUSHA | HINDU CALENDAR",
                 description: "Heart of winter brings crisp mornings and peaceful, misty landscapes.",
                 briefDescription: "Heart of winter brings crisp mornings and peaceful, misty landscapes.",
                 price: "Rs. 10,000.00",
@@ -606,6 +619,7 @@
             },
             magh: {
                 title: "MAGH",
+                displayTitle: "MAGH | HINDU CALENDAR",
                 description: "Sacred winter month of spiritual gatherings and holy celebrations.",
                 briefDescription: "Sacred winter month of spiritual gatherings and holy celebrations.",
                 price: "Rs. 10,000.00",
@@ -619,6 +633,7 @@
             },
             falgun: {
                 title: "FALGUN",
+                displayTitle: "FALGUN | HINDU CALENDAR",
                 description: "Spring's arrival brings colorful festivities and nature's renewal.",
                 briefDescription: "Spring's arrival brings colorful festivities and nature's renewal.",
                 price: "Rs. 10,000.00",
@@ -795,7 +810,7 @@
         function loadRecommendedPaintings(currentId, category) {
             const recommended = Object.entries(paintings)
                 .filter(([id, painting]) => id !== currentId && painting.category === category)
-                .slice(0, 4);
+                .slice(0, 3);
             
             const grid = document.querySelector('.recommended-section .product-grid');
             
@@ -809,14 +824,14 @@
             recommended.forEach(([id, painting]) => {
                 const card = `
                     <a href="painting.html?id=${id}" style="text-decoration: none; color: inherit;">
-                        <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
-                            <div style="height: 200px; overflow: hidden;">
-                                <img src="${painting.image}" alt="${painting.title}" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; cursor: pointer;">
+                            <div style="height: 250px; overflow: hidden; background: #f5f5f5; display: flex; align-items: center; justify-content: center; padding: 0.5cm;">
+                                <img src="${painting.image}" alt="${painting.title}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                             </div>
-                            <div style="padding: 1.5rem;">
-                                <h3 style="color: #d4c3b2; font-size: 1.3rem; margin-bottom: 0.5rem;">${painting.title}</h3>
-                                <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">${painting.briefDescription}</p>
-                                <p style="color: #c9b5a0; font-weight: bold; font-size: 1.2rem;">${painting.price}</p>
+                            <div style="padding: 1.5rem; text-align: center;">
+                                <h3 style="color: #2c2c2c; font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: 600;">${painting.displayTitle || painting.title}</h3>
+                                <p style="color: #888; font-size: 0.85rem; margin-bottom: 0.5rem;">${painting.size}</p>
+                                <p style="color: #c9b5a0; font-weight: bold; font-size: 1.1rem;">${painting.price}</p>
                             </div>
                         </div>
                     </a>
