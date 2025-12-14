@@ -81,8 +81,8 @@
         }
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
             margin-top: 3rem;
         }
         .product-card {
@@ -100,7 +100,7 @@
         .product-image {
             position: relative;
             overflow: hidden;
-            height: 400px;
+            height: 350px;
         }
         .product-image img {
             width: 100%;
@@ -112,35 +112,35 @@
             transform: scale(1.05);
         }
         .product-info {
-            padding: 1.5rem;
+            padding: 2rem;
         }
         .product-info h3 {
             color: #d4c3b2;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
         }
         .product-description {
             color: #666;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.6;
         }
         .product-details {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 1rem;
-            padding-top: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
             border-top: 1px solid #eee;
         }
         .product-size {
             color: #a89584;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-style: italic;
         }
         .price {
             font-weight: bold;
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             color: #c9b5a0;
         }
         footer {
@@ -149,6 +149,11 @@
             text-align: center;
             padding: 2rem;
             margin-top: 4rem;
+        }
+        @media (max-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         @media (max-width: 768px) {
             .nav { 
@@ -188,90 +193,48 @@
         <div class="container">
             <div class="page-header">
                 <h2>2026 Art Calendars</h2>
-                <p>Start your year with beauty! Each month features a stunning nature-inspired painting to brighten your space throughout 2026.</p>
+                <p>Start your year with beauty! Choose from our collection of stunning art calendars featuring nature-inspired paintings to brighten your space throughout 2026.</p>
             </div>
             
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://picsum.photos/400/500?random=30" alt="Nature's Seasons 2026 Calendar">
+                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760877329/Calendars_ryfhyd.jpg" alt="Calendar at ₹99">
                     </div>
                     <div class="product-info">
-                        <h3>Nature's Seasons 2026</h3>
-                        <p class="product-description">12 months of breathtaking landscapes celebrating each season's unique beauty.</p>
-                        <div class="product-details">
-                            <span class="product-size">12" × 12" Wall Calendar</span>
-                            <p class="price">€18,00</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://picsum.photos/400/500?random=31" alt="Garden Dreams 2026 Calendar">
-                    </div>
-                    <div class="product-info">
-                        <h3>Garden Dreams 2026</h3>
-                        <p class="product-description">Colorful garden scenes and floral paintings for nature lovers.</p>
-                        <div class="product-details">
-                            <span class="product-size">12" × 12" Wall Calendar</span>
-                            <p class="price">€18,00</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://picsum.photos/400/500?random=32" alt="Peaceful Places 2026 Calendar">
-                    </div>
-                    <div class="product-info">
-                        <h3>Peaceful Places 2026</h3>
-                        <p class="product-description">Serene landscapes to bring tranquility to your daily life.</p>
-                        <div class="product-details">
-                            <span class="product-size">10" × 14" Wall Calendar</span>
-                            <p class="price">€16,00</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://picsum.photos/400/500?random=33" alt="Coastal Beauty 2026 Calendar">
-                    </div>
-                    <div class="product-info">
-                        <h3>Coastal Beauty 2026</h3>
-                        <p class="product-description">Ocean views and beach scenes to inspire wanderlust all year long.</p>
-                        <div class="product-details">
-                            <span class="product-size">12" × 12" Wall Calendar</span>
-                            <p class="price">€18,00</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://picsum.photos/400/500?random=34" alt="Forest Trails 2026 Desk Calendar">
-                    </div>
-                    <div class="product-info">
-                        <h3>Forest Trails 2026</h3>
-                        <p class="product-description">Woodland paths and forest scenes for your desk. Compact size perfect for any workspace.</p>
+                        <h3>Calendar at ₹99</h3>
+                        <p class="product-description">Affordable desk calendar featuring beautiful artwork for every month. Perfect for your workspace or as a thoughtful gift. Compact size fits anywhere!</p>
                         <div class="product-details">
                             <span class="product-size">6" × 8" Desk Calendar</span>
-                            <p class="price">€12,00</p>
+                            <p class="price">₹99</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://picsum.photos/400/500?random=35" alt="Mountain Majesty 2026 Calendar">
+                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760877329/Calendars_ryfhyd.jpg" alt="Hindu Month Calendar">
                     </div>
                     <div class="product-info">
-                        <h3>Mountain Majesty 2026</h3>
-                        <p class="product-description">Stunning mountain vistas and alpine landscapes throughout the year.</p>
+                        <h3>Hindu Month Calendar</h3>
+                        <p class="product-description">Traditional Hindu calendar featuring all 12 months with vibrant seasonal paintings. Celebrate each month with beautiful canvas artwork representing the Hindu calendar.</p>
                         <div class="product-details">
                             <span class="product-size">12" × 12" Wall Calendar</span>
-                            <p class="price">€18,00</p>
+                            <p class="price">₹299</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://res.cloudinary.com/dzn1xvdak/image/upload/v1760877329/Calendars_ryfhyd.jpg" alt="A4 Prints Calendar">
+                    </div>
+                    <div class="product-info">
+                        <h3>A4 Prints Calendar</h3>
+                        <p class="product-description">Premium wall calendar showcasing our collection of A4 watercolor paintings. Each month features a unique artistic masterpiece to inspire your days.</p>
+                        <div class="product-details">
+                            <span class="product-size">A4 Wall Calendar</span>
+                            <p class="price">₹199</p>
                         </div>
                     </div>
                 </div>
