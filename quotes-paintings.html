@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Large canvas art and wall paintings - Statement pieces for your home">
-    <title>Wall Paintings - H Art Store</title>
+    <meta name="description" content="Inspirational Quote Paintings - H Art Store">
+    <title>Quotes Paintings - H Art Store</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -81,7 +81,7 @@
         }
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
@@ -92,6 +92,8 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
         }
         .product-card:hover {
             transform: translateY(-8px);
@@ -100,7 +102,7 @@
         .product-image {
             position: relative;
             overflow: hidden;
-            height: 350px;
+            height: 300px;
         }
         .product-image img {
             width: 100%;
@@ -113,6 +115,9 @@
         }
         .product-info {
             padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
         .product-info h3 {
             color: #d4c3b2;
@@ -123,7 +128,7 @@
             color: #666;
             margin-bottom: 1rem;
             font-size: 0.95rem;
-            line-height: 1.5;
+            flex: 1;
         }
         .product-details {
             display: flex;
@@ -183,12 +188,12 @@
             margin-top: 4rem;
         }
         @media (max-width: 768px) {
-            .nav { 
-                flex-direction: column; 
-                gap: 1rem; 
-                padding: 1rem 20px; 
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 20px;
             }
-            .nav ul { 
+            .nav ul {
                 gap: 1rem;
                 flex-wrap: wrap;
                 justify-content: center;
@@ -212,6 +217,7 @@
                 <li><a href="prints.html">Prints</a></li>
                 <li><a href="calendars.html">Calendars</a></li>
                 <li><a href="wall-paintings.html">Wall Paintings</a></li>
+                <li><a href="quotes-paintings.html">Quotes</a></li>
                 <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
                 <li><a href="wishlist.html">Wishlist ♡</a></li>
             </ul>
@@ -221,131 +227,54 @@
     <main>
         <div class="container">
             <div class="page-header">
-                <h2>Wall Paintings</h2>
-                <p>Large canvas art pieces designed to make a statement. Transform your space with bold, beautiful paintings that capture attention.</p>
+                <h2>Quotes Paintings</h2>
+                <p>Inspirational and motivational artwork featuring beautiful quotes. Perfect for adding positivity and meaning to your living space.</p>
             </div>
             
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://picsum.photos/400/450?random=40" alt="Grand Horizon Wall Art">
-                    </div>
-                    <div class="product-info">
-                        <h3>Grand Horizon</h3>
-                        <p class="product-description">Expansive landscape with dramatic sky perfect as a focal point for large walls.</p>
-                        <div class="product-details">
-                            <span class="product-size">36" × 48" Canvas</span>
-                            <p class="price">€320,00</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://picsum.photos/400/450?random=41" alt="Emerald Forest Wall Art">
-                    </div>
-                    <div class="product-info">
-                        <h3>Emerald Forest</h3>
-                        <p class="product-description">Lush green forest scene bringing nature's tranquility into your home.</p>
-                        <div class="product-details">
-                            <span class="product-size">30" × 40" Canvas</span>
-                            <p class="price">€280,00</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://picsum.photos/400/450?random=42" alt="Golden Valley Wall Art">
-                    </div>
-                    <div class="product-info">
-                        <h3>Golden Valley</h3>
-                        <p class="product-description">Warm sunset colors illuminate rolling hills in this large statement piece.</p>
-                        <div class="product-details">
-                            <span class="product-size">40" × 60" Canvas</span>
-                            <p class="price">€380,00</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://picsum.photos/400/450?random=43" alt="Ocean Depth Wall Art">
-                    </div>
-                    <div class="product-info">
-                        <h3>Ocean Depth</h3>
-                        <p class="product-description">Deep blues and turquoise create a calming coastal atmosphere.</p>
-                        <div class="product-details">
-                            <span class="product-size">36" × 36" Canvas</span>
-                            <p class="price">€300,00</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://picsum.photos/400/450?random=44" alt="Blossom Symphony Wall Art">
-                    </div>
-                    <div class="product-info">
-                        <h3>Blossom Symphony</h3>
-                        <p class="product-description">Vibrant floral composition adding color and life to any room.</p>
-                        <div class="product-details">
-                            <span class="product-size">24" × 36" Canvas</span>
-                            <p class="price">€240,00</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://picsum.photos/400/450?random=45" alt="Mountain Vista Wall Art">
-                    </div>
-                    <div class="product-info">
-                        <h3>Mountain Vista</h3>
-                        <p class="product-description">Majestic mountain range capturing the grandeur of nature on large canvas.</p>
-                        <div class="product-details">
-                            <span class="product-size">48" × 72" Canvas</span>
-                            <p class="price">€450,00</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
+            <div class="product-grid" id="quotesGrid">
+                <!-- Quote products will be loaded dynamically -->
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 H Art Store. All rights reserved.</p>
+    </footer>
 
     <script src="js/cart.js"></script>
     <script src="js/wishlist.js"></script>
     <script>
-        const wallPaintings = [
+        const quotePaintings = [
             {
-                id: 'wall_painting_nature',
-                name: 'Nature\'s Symphony',
-                price: 25000,
-                image: 'https://res.cloudinary.com/dzn1xvdak/image/upload/v1760877327/Wall_painting_v94buv.jpg',
-                description: 'Large canvas wall painting bringing nature\'s beauty into your space.',
-                size: '36" × 48" Canvas'
+                id: 'quote_painting_1',
+                name: 'Live Your Dream',
+                price: 8000,
+                image: 'https://res.cloudinary.com/dzn1xvdak/image/upload/v1760858423/Quotes_Full_Scale_cf6ktx.jpg',
+                description: 'Inspirational quote painted with beautiful artistic elements.',
+                size: '12" × 16" Canvas'
             },
             {
-                id: 'wall_painting_garden',
-                name: 'Garden Dreams',
-                price: 25000,
-                image: 'https://res.cloudinary.com/dzn1xvdak/image/upload/v1760877327/Wall_painting_v94buv.jpg',
-                description: 'Expansive garden scene perfect for your living room or bedroom.',
-                size: '36" × 48" Canvas'
+                id: 'quote_painting_2',
+                name: 'Be Beautiful',
+                price: 8000,
+                image: 'https://res.cloudinary.com/dzn1xvdak/image/upload/v1760858423/Quotes_Full_Scale_cf6ktx.jpg',
+                description: 'Motivational artwork celebrating inner beauty.',
+                size: '12" × 16" Canvas'
             },
             {
-                id: 'wall_painting_landscape',
-                name: 'Mountain Vista',
-                price: 20000,
-                image: 'https://res.cloudinary.com/dzn1xvdak/image/upload/v1760877327/Wall_painting_v94buv.jpg',
-                description: 'Breathtaking mountainous landscape for your home.',
-                size: '30" × 40" Canvas'
+                id: 'quote_painting_3',
+                name: 'Follow Your Heart',
+                price: 8000,
+                image: 'https://res.cloudinary.com/dzn1xvdak/image/upload/v1760858423/Quotes_Full_Scale_cf6ktx.jpg',
+                description: 'Art piece encouraging you to follow your passion.',
+                size: '12" × 16" Canvas'
             }
         ];
 
-        function loadWallPaintings() {
-            const grid = document.querySelector('.product-grid');
-            grid.innerHTML = wallPaintings.map(product => `
+        function loadQuotes() {
+            const grid = document.getElementById('quotesGrid');
+            
+            grid.innerHTML = quotePaintings.map(product => `
                 <div class="product-card">
                     <div class="product-image">
                         <img src="${product.image}" alt="${product.name}">
@@ -394,42 +323,10 @@
             document.getElementById('cart-count').textContent = cart.getCartCount();
         }
 
-        loadWallPaintings();
+        loadQuotes();
         updateCartCount();
 
         window.addEventListener('cartUpdated', updateCartCount);
     </script>
-                        <img src="https://picsum.photos/400/450?random=46" alt="Abstract Nature Wall Art">
-                    </div>
-                    <div class="product-info">
-                        <h3>Abstract Nature</h3>
-                        <p class="product-description">Contemporary take on natural forms with bold colors and flowing shapes.</p>
-                        <div class="product-details">
-                            <span class="product-size">30" × 40" Canvas</span>
-                            <p class="price">€290,00</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://picsum.photos/400/450?random=47" alt="Serenity Falls Wall Art">
-                    </div>
-                    <div class="product-info">
-                        <h3>Serenity Falls</h3>
-                        <p class="product-description">Peaceful waterfall scene creating a zen atmosphere in your space.</p>
-                        <div class="product-details">
-                            <span class="product-size">36" × 48" Canvas</span>
-                            <p class="price">€330,00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    
-    <footer>
-        <p>&copy; 2025 H Art Store. All rights reserved.</p>
-    </footer>
 </body>
 </html>

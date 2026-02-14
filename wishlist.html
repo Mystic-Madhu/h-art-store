@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your Wishlist - H Art Store">
+    <title>Wishlist - H Art Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+        h1, h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 500;
+        }
+        h1 { font-size: 2rem; color: white; margin: 0; }
+        h2 { font-size: 2rem; color: #d4c3b2; margin-bottom: 1.5rem; }
+        .header {
+            background: linear-gradient(135deg, #d4c3b2, #c9b5a0);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        .nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .wishlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        .wishlist-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .wishlist-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        .item-image {
+            width: 100%;
+            height: 250px;
+            background: #f5f5f5;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 1rem;
+        }
+        .item-content {
+            padding: 1.5rem;
+        }
+        .item-name {
+            font-size: 1.2rem;
+            color: #2c2c2c;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .item-price {
+            color: #c9b5a0;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .item-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        .btn {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        .btn-cart {
+            background: #c9b5a0;
+            color: white;
+        }
+        .btn-cart:hover {
+            background: #b8a290;
+        }
+        .btn-remove {
+            background: #ff6b6b;
+            color: white;
+        }
+        .btn-remove:hover {
+            background: #ff5252;
+        }
+        .empty-wishlist {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #999;
+        }
+        .empty-wishlist h3 {
+            color: #666;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        footer {
+            background: #a89584;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <h1>H Art Store</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="originals.html">Originals</a></li>
+                <li><a href="prints.html">Prints</a></li>
+                <li><a href="calendars.html">Calendars</a></li>
+                <li><a href="wall-paintings.html">Wall Paintings</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>My Wishlist ♡</h2>
+        
+        <div id="wishlistContainer">
+            <!-- Wishlist items will be loaded here -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 H Art Store. All rights reserved.</p>
+    </footer>
+
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script>
+        function displayWishlist() {
+            const container = document.getElementById('wishlistContainer');
+            const items = wishlist.getItems();
+
+            if (items.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-wishlist">
+                        <h3>Your wishlist is empty</h3>
+                        <p>Add items to your wishlist to view them later!</p>
+                        <a href="originals.html" style="color: #c9b5a0; text-decoration: underline; font-size: 1.1rem;">Continue Shopping</a>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = `
+                <div class="wishlist-grid">
+                    ${items.map((item, index) => `
+                        <div class="wishlist-item">
+                            <div class="item-image">
+                                <img src="${item.image}" alt="${item.name}">
+                            </div>
+                            <div class="item-content">
+                                <div class="item-name">${item.name}</div>
+                                <div class="item-price">₹${item.price}</div>
+                                <div class="item-actions">
+                                    <button class="btn btn-cart" onclick="addToCart({
+                                        id: '${item.id}',
+                                        name: '${item.name}',
+                                        price: ${item.price},
+                                        image: '${item.image}'
+                                    })">Add to Cart</button>
+                                    <button class="btn btn-remove" onclick="removeFromWishlist(${index})">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function addToCart(product) {
+            cart.addItem(product);
+            alert(product.name + ' added to cart!');
+        }
+
+        function removeFromWishlist(index) {
+            const items = wishlist.getItems();
+            if (items[index]) {
+                wishlist.removeItem(items[index].id);
+                displayWishlist();
+            }
+        }
+
+        // Initial load
+        displayWishlist();
+
+        // Update when wishlist changes
+        window.addEventListener('wishlistUpdated', displayWishlist);
+    </script>
+</body>
+</html>

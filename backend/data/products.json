@@ -1,0 +1,452 @@
+[
+  {
+    "id": "chaitra",
+    "name": "Chaitra",
+    "category": "Originals",
+    "price": 10000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Chaitra_wavylr.jpg",
+    "description": "Spring blooms and new beginnings mark the first month of the Hindu calendar.",
+    "size": "10\" × 12\" Canvas",
+    "details": "Hand-painted original artwork capturing the essence of spring"
+  },
+  {
+    "id": "vaishakh",
+    "name": "Vaishakh",
+    "category": "Originals",
+    "price": 10000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763295097/Vaishakh_z0qa1m.jpg",
+    "description": "Vibrant flowers and warm sunshine celebrate the beauty of summer's arrival.",
+    "size": "10\" × 12\" Canvas",
+    "details": "Original painting showcasing summer vibrancy"
+  },
+  {
+    "id": "jyeshtha",
+    "name": "Jyeshtha",
+    "category": "Originals",
+    "price": 10000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Jyeshtha_qrweyz.jpg",
+    "description": "The peak of summer brings golden warmth and abundant nature's bounty.",
+    "size": "10\" × 12\" Canvas",
+    "details": "Original artwork celebrating the peak of summer"
+  },
+  {
+    "id": "ashadh",
+    "name": "Ashadh",
+    "category": "Originals",
+    "price": 10000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Ashadh_ovvtnu.jpg",
+    "description": "Monsoon clouds gather, bringing life-giving rains and lush greenery to the land.",
+    "size": "10\" × 12\" Canvas",
+    "details": "Original painting depicting monsoon arrival"
+  },
+  {
+    "id": "shrawan",
+    "name": "Shrawan",
+    "category": "Originals",
+    "price": 10000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963163/Shrawan_grzsxz.jpg",
+    "description": "Sacred month of monsoon, when nature is at its most vibrant and fresh.",
+    "size": "10\" × 12\" Canvas",
+    "details": "Original artwork celebrating the monsoon season"
+  },
+  {
+    "id": "bhadrapada",
+    "name": "Bhadrapada",
+    "category": "Originals",
+    "price": 10000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/BHadrapad_nchz6o.jpg",
+    "description": "Late monsoon beauty with lush landscapes and gentle rain showers.",
+    "size": "10\" × 12\" Canvas",
+    "details": "Original painting of late monsoon beauty"
+  },
+  {
+    "id": "ashwin",
+    "name": "Ashwin",
+    "category": "Originals",
+    "price": 10000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963111/Ashwin_g5ley6.jpg",
+    "description": "Festive autumn month bringing celebrations and harvest abundance.",
+    "size": "10\" × 12\" Canvas",
+    "details": "Original artwork celebrating autumn festivities"
+  },
+  {
+    "id": "karthik",
+    "name": "Karthik",
+    "category": "Originals",
+    "price": 10000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963114/Karthik_uvb6ub.jpg",
+    "description": "Month of lights and lamps, celebrating joy and spiritual awakening.",
+    "size": "10\" × 12\" Canvas",
+    "details": "Original painting of spiritual celebration"
+  },
+  {
+    "id": "margashirsha",
+    "name": "Margashirsha",
+    "category": "Originals",
+    "price": 10000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963115/Margashirsha_cbewfi.jpg",
+    "description": "Pleasant winter begins with cool breezes and serene natural beauty.",
+    "size": "10\" × 12\" Canvas",
+    "details": "Original artwork celebrating winter arrival"
+  },
+  {
+    "id": "pausha",
+    "name": "Pausha",
+    "category": "Originals",
+    "price": 10000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963115/Paush_fmtxty.jpg",
+    "description": "Heart of winter brings crisp mornings and peaceful, misty landscapes.",
+    "size": "10\" × 12\" Canvas",
+    "details": "Original painting of winter beauty"
+  },
+  {
+    "id": "magh",
+    "name": "Magh",
+    "category": "Originals",
+    "price": 10000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963114/Magh_lkzd6o.jpg",
+    "description": "Sacred winter month of spiritual gatherings and holy celebrations.",
+    "size": "10\" × 12\" Canvas",
+    "details": "Original artwork of spiritual significance"
+  },
+  {
+    "id": "falgun",
+    "name": "Falgun",
+    "category": "Originals",
+    "price": 10000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760963112/Falgun_g6b5p3.jpg",
+    "description": "Spring's arrival brings colorful festivities and nature's renewal.",
+    "size": "10\" × 12\" Canvas",
+    "details": "Original painting celebrating spring renewal"
+  },
+  {
+    "id": "highway",
+    "name": "Highway Journey",
+    "category": "Originals",
+    "price": 5000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763315353/highway_d2e1k2.jpg",
+    "description": "Open road stretching toward distant mountains under a colorful sky.",
+    "size": "A4 Paper",
+    "details": "Original painting on A4 paper"
+  },
+  {
+    "id": "bowl_of_health",
+    "name": "Bowl of Health",
+    "category": "Originals",
+    "price": 5000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312918/bowl_of_heath_hke0f0.jpg",
+    "description": "Fresh fruits and vibrant colors celebrating nature's nutritious bounty.",
+    "size": "A4 Paper",
+    "details": "Original artwork on A4 paper"
+  },
+  {
+    "id": "garden_chai_wala",
+    "name": "Garden Chai Wala",
+    "category": "Originals",
+    "price": 5000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312727/garden_chai_wala_rvfpch.jpg",
+    "description": "Traditional chai seller amid blooming garden flowers and greenery.",
+    "size": "A4 Paper",
+    "details": "Original painting on A4 paper"
+  },
+  {
+    "id": "city_vibes",
+    "name": "City Vibes",
+    "category": "Originals",
+    "price": 5000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312790/city_vibes_ixg0al.jpg",
+    "description": "Urban landscape with buildings and streets captured in vibrant colors.",
+    "size": "A4 Paper",
+    "details": "Original artwork on A4 paper"
+  },
+  {
+    "id": "the_bridge",
+    "name": "The Bridge",
+    "category": "Originals",
+    "price": 5000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312823/bridge_sfixei.jpg",
+    "description": "Rustic bridge over peaceful waters connecting nature's two sides.",
+    "size": "A4 Paper",
+    "details": "Original painting on A4 paper"
+  },
+  {
+    "id": "boat_journey",
+    "name": "Boat Journey",
+    "category": "Originals",
+    "price": 5000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312862/boat_journey_nlzaei.jpg",
+    "description": "Serene boat sailing through calm waters under a tranquil sky.",
+    "size": "A4 Paper",
+    "details": "Original artwork on A4 paper"
+  },
+  {
+    "id": "just_u_n_me",
+    "name": "Just You & Me",
+    "category": "Originals",
+    "price": 5000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312694/just_u_n_me_dd55pi.jpg",
+    "description": "Romantic moment captured with two figures in a beautiful setting.",
+    "size": "A4 Paper",
+    "details": "Original painting on A4 paper"
+  },
+  {
+    "id": "moon",
+    "name": "Moonlit Night",
+    "category": "Originals",
+    "price": 5000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763315426/moon_tlskhv.jpg",
+    "description": "Glowing moon illuminating the night sky with soft, magical light.",
+    "size": "A4 Paper",
+    "details": "Original artwork on A4 paper"
+  },
+  {
+    "id": "the_land",
+    "name": "The Land",
+    "category": "Originals",
+    "price": 5000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312646/land_qal3or.jpg",
+    "description": "Expansive countryside landscape with rolling fields and open horizons.",
+    "size": "A4 Paper",
+    "details": "Original painting on A4 paper"
+  },
+  {
+    "id": "secret_garden",
+    "name": "Secret Garden",
+    "category": "Originals",
+    "price": 5000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312611/garden_of91eh.jpg",
+    "description": "Hidden garden sanctuary filled with blooming flowers and lush plants.",
+    "size": "A4 Paper",
+    "details": "Original artwork on A4 paper"
+  },
+  {
+    "id": "summers_calling",
+    "name": "Summer's Calling",
+    "category": "Originals",
+    "price": 5000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312442/summers_calling_eda0e8.jpg",
+    "description": "Bright summer day inviting you to enjoy nature's warmth and beauty.",
+    "size": "A4 Paper",
+    "details": "Original painting on A4 paper"
+  },
+  {
+    "id": "to_build_a_home",
+    "name": "To Build a Home",
+    "category": "Originals",
+    "price": 5000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312518/to_build_a_home_ragfcm.jpg",
+    "description": "Cozy house surrounded by nature, representing warmth and belonging.",
+    "size": "A4 Paper",
+    "details": "Original artwork on A4 paper"
+  },
+  {
+    "id": "the_night_we_met",
+    "name": "The Night We Met",
+    "category": "Originals",
+    "price": 5000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312572/night_we_met_mi2vwm.jpg",
+    "description": "Magical evening scene capturing a special moment under starlight.",
+    "size": "A4 Paper",
+    "details": "Original painting on A4 paper"
+  },
+  {
+    "id": "soulmates",
+    "name": "Soulmates",
+    "category": "Originals",
+    "price": 5000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312365/soulmates_pupfct.jpg",
+    "description": "Two hearts intertwined in perfect harmony and eternal connection.",
+    "size": "A4 Paper",
+    "details": "Original artwork on A4 paper"
+  },
+  {
+    "id": "sunflower_field",
+    "name": "Sunflower Field",
+    "category": "Originals",
+    "price": 5000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763312196/sunflower_field_iiftgb.jpg",
+    "description": "Golden sunflowers swaying in the breeze under bright summer sun.",
+    "size": "A4 Paper",
+    "details": "Original painting on A4 paper"
+  },
+  {
+    "id": "golden_sunset",
+    "name": "Golden Sunset",
+    "category": "Originals",
+    "price": 5000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763313617/golden_sunset_1_2_odjxxs.jpg",
+    "description": "Warm golden hues painting the sky as day transitions to night.",
+    "size": "A4 Paper",
+    "details": "Original artwork on A4 paper"
+  },
+  {
+    "id": "the_old_tree",
+    "name": "The Old Tree",
+    "category": "Originals",
+    "price": 5000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1763313575/old_tree_1_xo1qir.jpg",
+    "description": "Ancient tree standing tall, witness to countless seasons and stories.",
+    "size": "A4 Paper",
+    "details": "Original artwork on A4 paper"
+  },
+  {
+    "id": "sunset_dreams_print",
+    "name": "Sunset Dreams",
+    "category": "Prints",
+    "price": 2500,
+    "image": "https://picsum.photos/400/450?random=20",
+    "description": "Warm sunset colors illuminate the sky in this peaceful landscape print.",
+    "size": "8\" × 10\" Print",
+    "details": "Premium quality art print"
+  },
+  {
+    "id": "wildflower_meadow_print",
+    "name": "Wildflower Meadow",
+    "category": "Prints",
+    "price": 3500,
+    "image": "https://picsum.photos/400/450?random=21",
+    "description": "A field of colorful wildflowers swaying in the summer breeze.",
+    "size": "11\" × 14\" Print",
+    "details": "High-quality art reproduction"
+  },
+  {
+    "id": "misty_morning_print",
+    "name": "Misty Morning",
+    "category": "Prints",
+    "price": 4500,
+    "image": "https://picsum.photos/400/450?random=22",
+    "description": "Soft morning mist rolling over hills creates a dreamy atmosphere.",
+    "size": "12\" × 16\" Print",
+    "details": "Premium art print on fine paper"
+  },
+  {
+    "id": "autumn_path_print",
+    "name": "Autumn Path",
+    "category": "Prints",
+    "price": 3500,
+    "image": "https://picsum.photos/400/450?random=23",
+    "description": "Golden autumn leaves line a peaceful walking path through the woods.",
+    "size": "11\" × 14\" Print",
+    "details": "Quality art print"
+  },
+  {
+    "id": "coastal_breeze_print",
+    "name": "Coastal Breeze",
+    "category": "Prints",
+    "price": 5500,
+    "image": "https://picsum.photos/400/450?random=24",
+    "description": "Gentle waves and sandy shores capture the essence of seaside serenity.",
+    "size": "16\" × 20\" Print",
+    "details": "Premium quality art print"
+  },
+  {
+    "id": "spring_garden_print",
+    "name": "Spring Garden",
+    "category": "Prints",
+    "price": 2800,
+    "image": "https://picsum.photos/400/450?random=25",
+    "description": "Fresh spring blooms burst with color in this cheerful garden scene.",
+    "size": "8\" × 10\" Print",
+    "details": "Quality art reproduction"
+  },
+  {
+    "id": "winter_wonderland_print",
+    "name": "Winter Wonderland",
+    "category": "Prints",
+    "price": 4200,
+    "image": "https://picsum.photos/400/450?random=26",
+    "description": "Snow-covered trees create a magical winter landscape.",
+    "size": "12\" × 16\" Print",
+    "details": "Premium art print"
+  },
+  {
+    "id": "lavender_fields_print",
+    "name": "Lavender Fields",
+    "category": "Prints",
+    "price": 3800,
+    "image": "https://picsum.photos/400/450?random=27",
+    "description": "Endless rows of purple lavender stretching toward the horizon.",
+    "size": "11\" × 14\" Print",
+    "details": "Fine art print"
+  },
+  {
+    "id": "calendar_2025",
+    "name": "H Art Store 2025 Calendar",
+    "category": "Calendars",
+    "price": 1500,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760877329/Calendars_ryfhyd.jpg",
+    "description": "Beautiful art calendar featuring stunning paintings for each month.",
+    "size": "A3 size",
+    "details": "Wall calendar 2025 with monthly artwork"
+  },
+  {
+    "id": "calendar_2026",
+    "name": "H Art Store 2026 Calendar",
+    "category": "Calendars",
+    "price": 1500,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760877329/Calendars_ryfhyd.jpg",
+    "description": "Annual calendar showcasing new artworks throughout 2026.",
+    "size": "A3 size",
+    "details": "Premium wall calendar"
+  },
+  {
+    "id": "wall_painting_nature",
+    "name": "Nature's Symphony",
+    "category": "Wall Paintings",
+    "price": 25000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760877327/Wall_painting_v94buv.jpg",
+    "description": "Large canvas wall painting bringing nature's beauty into your space.",
+    "size": "36\" × 48\" Canvas",
+    "details": "Large original wall art piece"
+  },
+  {
+    "id": "wall_painting_garden",
+    "name": "Garden Dreams",
+    "category": "Wall Paintings",
+    "price": 25000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760877327/Wall_painting_v94buv.jpg",
+    "description": "Expansive garden scene perfect for your living room or bedroom.",
+    "size": "36\" × 48\" Canvas",
+    "details": "Large canvas wall painting"
+  },
+  {
+    "id": "wall_painting_landscape",
+    "name": "Mountain Vista",
+    "category": "Wall Paintings",
+    "price": 20000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760877327/Wall_painting_v94buv.jpg",
+    "description": "Breathtaking mountainous landscape for your home.",
+    "size": "30\" × 40\" Canvas",
+    "details": "Medium-sized wall painting"
+  },
+  {
+    "id": "quote_painting_1",
+    "name": "Live Your Dream",
+    "category": "Quotes Paintings",
+    "price": 8000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760858423/Quotes_Full_Scale_cf6ktx.jpg",
+    "description": "Inspirational quote painted with beautiful artistic elements.",
+    "size": "12\" × 16\" Canvas",
+    "details": "Quote painting with artistic design"
+  },
+  {
+    "id": "quote_painting_2",
+    "name": "Be Beautiful",
+    "category": "Quotes Paintings",
+    "price": 8000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760858423/Quotes_Full_Scale_cf6ktx.jpg",
+    "description": "Motivational artwork celebrating inner beauty.",
+    "size": "12\" × 16\" Canvas",
+    "details": "Motivational quote painting"
+  },
+  {
+    "id": "quote_painting_3",
+    "name": "Follow Your Heart",
+    "category": "Quotes Paintings",
+    "price": 8000,
+    "image": "https://res.cloudinary.com/dzn1xvdak/image/upload/v1760858423/Quotes_Full_Scale_cf6ktx.jpg",
+    "description": "Art piece encouraging you to follow your passion.",
+    "size": "12\" × 16\" Canvas",
+    "details": "Inspirational quote art"
+  }
+]
